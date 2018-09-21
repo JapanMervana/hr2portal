@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2018
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dotnet-tutorial", "dotnet-tutorial\dotnet-tutorial.csproj", "{5F0EF413-E5C0-4ADF-A912-996B0168756F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HR2.Web", "HR2.Web\HR2.Web.csproj", "{DE5D6E3F-CEC1-430E-B5DB-7842DB55970D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +17,15 @@ Global
 		{5F0EF413-E5C0-4ADF-A912-996B0168756F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F0EF413-E5C0-4ADF-A912-996B0168756F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F0EF413-E5C0-4ADF-A912-996B0168756F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE5D6E3F-CEC1-430E-B5DB-7842DB55970D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE5D6E3F-CEC1-430E-B5DB-7842DB55970D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE5D6E3F-CEC1-430E-B5DB-7842DB55970D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE5D6E3F-CEC1-430E-B5DB-7842DB55970D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CC9164DC-B7FF-477A-96D2-1EA861363A69}
 	EndGlobalSection
 EndGlobal
