@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace dotnet_tutorial.Controllers
 {
+    [Authorize]
     public class AttendanceController : Controller
     {
         // GET: Attendance
@@ -24,7 +25,7 @@ namespace dotnet_tutorial.Controllers
             model.DayWiseAttendanceSummary.Add(new DayWiseAttendanceSummary()
             {
                 AttendanceStatus = AttendanceStatus.Present.DescriptionAttr(),
-                Date = DateTime.Now.ToShortDateString(),
+                Date = DateTime.Now.Day.ToString(),
                 ExtraDeficitHours = new TimeSpan(0, 16, 10),
                 InTime = DateTime.Now.ToShortTimeString(),
                 OutTime = DateTime.Now.ToShortTimeString(),
@@ -34,7 +35,7 @@ namespace dotnet_tutorial.Controllers
             model.DayWiseAttendanceSummary.Add(new DayWiseAttendanceSummary()
             {
                 AttendanceStatus = AttendanceStatus.HalfDay.DescriptionAttr(),
-                Date = DateTime.Now.AddDays(1).ToShortDateString(),
+                Date = DateTime.Now.AddDays(1).Day.ToString(),
                 ExtraDeficitHours = new TimeSpan(0, 0, 0),
                 InTime = DateTime.Now.ToShortTimeString(),
                 OutTime = DateTime.Now.ToShortTimeString(),
@@ -44,7 +45,7 @@ namespace dotnet_tutorial.Controllers
             model.DayWiseAttendanceSummary.Add(new DayWiseAttendanceSummary()
             {
                 AttendanceStatus = AttendanceStatus.Absent.DescriptionAttr(),
-                Date = DateTime.Now.AddDays(2).ToShortDateString(),
+                Date = DateTime.Now.AddDays(2).Day.ToString(),
                 ExtraDeficitHours = new TimeSpan(0, 0, 0),
                 InTime = "00:00",
                 OutTime = "00:00",

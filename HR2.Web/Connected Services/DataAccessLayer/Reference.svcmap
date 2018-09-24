@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b8f9bcd7-ba99-4c62-b54f-39469f002a6e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:49312/HR2DataAccessLayer.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="HR2DataAccessLayer.disco" MetadataType="Disco" ID="4341579f-3c73-44bf-8b4b-b227475ecf67" SourceId="1" SourceUrl="http://localhost:49312/HR2DataAccessLayer.svc?disco" />
+    <MetadataFile FileName="HR2DataAccessLayer.xsd" MetadataType="Schema" ID="e84bf762-09de-42b8-b685-b8013479926f" SourceId="1" SourceUrl="http://localhost:49312/HR2DataAccessLayer.svc?xsd=xsd0" />
+    <MetadataFile FileName="HR2DataAccessLayer.wsdl" MetadataType="Wsdl" ID="ea8cddac-66af-4bdd-b74d-cefc1c2d8fef" SourceId="1" SourceUrl="http://localhost:49312/HR2DataAccessLayer.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

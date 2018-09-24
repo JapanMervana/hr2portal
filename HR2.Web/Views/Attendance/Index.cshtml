@@ -2,67 +2,73 @@
 @{
     ViewBag.Title = "Home Page";
 }
-<style>
-    .list-group-item {
-        padding: 2px !important;
-    }
 
+<style>
+    .badge {
+        background-color: white !important;
+        color: black !important;
+        font-weight:normal !important;
+    }
+    .table-condensed > thead > tr > th, .table-condensed > tbody > tr > th, .table-condensed > tfoot > tr > th, .table-condensed > thead > tr > td, .table-condensed > tbody > tr > td, .table-condensed > tfoot > tr > td {
+    padding:1px !important;
+    }
 </style>
 
 <div class="row">
     <div class="col-sm-1">
-        <img src="~/Image/avtar.png" alt="employee-photo" class="img-thumbnail" />
+        <img src="~/Image/avtar.png" alt="employee-photo" class="img-thumbnail img-responsive" />
     </div>
     <div class="col-sm-2">
         <h5><b>Japan Mervana</b></h5>
         <small>Sr. Software Engineer</small><br />
         <small>Techblocks - Ahmedabad</small>
     </div>
+    <div class="col-xs-12 visible-xs">&nbsp;</div>
     <div class="col-sm-6">
         <form class="form-inline">
             <div class="form-group">
-                <label for="txtEmail" style="padding-right:8px">Attendance Report of</label>
+                <label for="txtEmail">Attendance Report of&nbsp;</label>
                 <input type="email" class="form-control" id="txtEmail" placeholder="Username">
             </div>
             <div class="form-group">
-                <span style="padding:0px 8px 0px 8px"> for </span>
-            </div>
-            <div class="form-group"  style="padding-right:8px">
-                <div class="dropdown">
-                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                        Month
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li><a href="#">Separated link</a></li>
-                    </ul>
-                </div>
+                <span>&nbsp;<b>for</b>&nbsp;</span>
             </div>
             <div class="form-group">
-                <div class="dropdown">
-                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                        Year
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li><a href="#">Separated link</a></li>
-                    </ul>
-                </div>
+                <select class="form-control">
+                    <option>Month</option>
+                    <option>Jan</option>
+                    <option>Feb</option>
+                    <option>Mar</option>
+                    <option>Apr</option>
+                    <option>May</option>
+                    <option>Jun</option>
+                    <option>Jul</option>
+                    <option>Aug</option>
+                    <option>Sep</option>
+                    <option>Oct</option>
+                    <option>Nov</option>
+                    <option>Dec</option>
+                </select>
             </div>
-            <div>&nbsp;</div>
-            <div class="col-sm-12">
-                <button type="button" class="btn btn-primary pull-right"  style="margin-right:8px">Search</button>
+            <div class="form-group">
+                <select class="form-control">
+                    <option>Year</option>
+                    <option>2012</option>
+                    <option>2013</option>
+                    <option>2014</option>
+                    <option>2015</option>
+                    <option>2016</option>
+                    <option>2017</option>
+                    <option>2018</option>
+                </select>
             </div>
+            <button type="button" class="btn btn-primary">Go</button>
         </form>
     </div>
+    <div class="col-xs-12 visible-xs">&nbsp;</div>
     <div class="col-sm-3">
-        <table class="table table-hover">
+
+        <table class="table table-hover table-condensed">
             <tr>
                 <td>Work Days</td>
                 <td><span class="badge">@Model.TotalWorkDays days</span></td>
@@ -88,6 +94,7 @@
                 <td><span class="badge">@Model.TotalLeaves days</span></td>
             </tr>
         </table>
+
     </div>
 </div>
 <hr />
