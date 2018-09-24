@@ -23,10 +23,9 @@
 {
     <text>
      
-            <div>
+            <div class="pull-right">
                 @Html.ActionLink("Hello " + User.Identity.Name + "!", "Index", "UserProfile", routeValues: null, htmlAttributes: null)
-            </div>
-            <div>
+           |
                 @Html.ActionLink("Sign out", "SignOut", "Account")
             </div>
        
