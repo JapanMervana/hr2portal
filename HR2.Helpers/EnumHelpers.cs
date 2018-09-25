@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
+﻿using System.ComponentModel;
 using System.Reflection;
-using System.Web;
 
-namespace HR2.Web.Helpers
+namespace HR2.Helpers
 {
     public static class EnumHelpers
     {

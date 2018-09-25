@@ -1,10 +1,8 @@
-﻿using HR2.Web.Helpers;
-using HR2.Web.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
+using HR2.Helpers;
+using HR2.Web.Models;
 
 namespace dotnet_tutorial.Controllers
 {

@@ -225,7 +225,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\EnumHelpers.cs" />
     <Compile Include="Models\AdalTokenCache.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\AttendanceSummary.cs" />
@@ -317,6 +316,12 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\DataAccessLayer\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HR2.Helpers\HR2.Helpers.csproj">
+      <Project>{8ad3613a-4dd1-45b0-ae41-c85e8af3cce1}</Project>
+      <Name>HR2.Helpers</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
