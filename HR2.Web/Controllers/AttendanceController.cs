@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
-using HR2.Helpers;
+using HR2.Helpers.Extenstions;
 using HR2.Web.Models;
 
 namespace dotnet_tutorial.Controllers
