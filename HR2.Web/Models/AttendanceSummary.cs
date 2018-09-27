@@ -77,6 +77,5 @@ namespace HR2.Web.Models
         Flexible,
         [Description("Fixed")]
         Fixed,
-
     }
 }
