@@ -22,6 +22,7 @@ namespace HR2.Web
         private static string aadInstance = EnsureTrailingSlash(ConfigurationManager.AppSettings["ida:AADInstance"]);
         private static string tenantId = ConfigurationManager.AppSettings["ida:TenantId"];
         private static string postLogoutRedirectUri = ConfigurationManager.AppSettings["ida:PostLogoutRedirectUri"];
+        private static string redirectUri = ConfigurationManager.AppSettings["ida:RedirectUri"];
 
         public static readonly string Authority = aadInstance + tenantId;
 
@@ -42,6 +43,7 @@ namespace HR2.Web
                     ClientId = clientId,
                     Authority = Authority,
                     PostLogoutRedirectUri = postLogoutRedirectUri,
+                    RedirectUri = redirectUri,
 
                     Notifications = new OpenIdConnectAuthenticationNotifications()
                     {
@@ -53,10 +55,14 @@ namespace HR2.Web
                            string signedInUserID = context.AuthenticationTicket.Identity.FindFirst(ClaimTypes.NameIdentifier).Value;
                            AuthenticationContext authContext = new AuthenticationContext(Authority, new ADALTokenCache(signedInUserID));
                            AuthenticationResult result = authContext.AcquireTokenByAuthorizationCodeAsync(
-                               code, new Uri(HttpContext.Current.Request.Url.GetLeftPart(UriPartial.Path)), credential, graphResourceId).Result;
+                               code, new Uri(redirectUri), credential, graphResourceId).Result;
 
                            return Task.FromResult(0);
-                       }
+                       },
+                        RedirectToIdentityProvider = async n =>
+                        {
+                            n.ProtocolMessage.RedirectUri = redirectUri;
+                        }
                     }
                 });
         }

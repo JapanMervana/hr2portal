@@ -11,6 +11,10 @@ namespace HR2.Web.Controllers
     {
         public ActionResult Index()
         {
+            if (Request.IsAuthenticated)
+            {
+                return Redirect("/Attendance/Index");
+            }
             return View();
         }
 
