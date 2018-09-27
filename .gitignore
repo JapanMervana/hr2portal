@@ -52,3 +52,4 @@ readme.html
 adalv4
 /.vs
 dotnet-tutorial/AzureOauth.config
+/HR2.Web/Properties/PublishProfiles/FolderProfile.pubxml
