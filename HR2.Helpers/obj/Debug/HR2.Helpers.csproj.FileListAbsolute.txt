@@ -1,0 +1,10 @@
+D:\Projects\HR2\HR2.DAL\HR2.Helpers\bin\Debug\HR2.Helpers.dll
+D:\Projects\HR2\HR2.DAL\HR2.Helpers\bin\Debug\HR2.Helpers.pdb
+D:\Projects\HR2\HR2.DAL\HR2.Helpers\obj\Debug\HR2.Helpers.csprojResolveAssemblyReference.cache
+D:\Projects\HR2\HR2.DAL\HR2.Helpers\obj\Debug\HR2.Helpers.dll
+D:\Projects\HR2\HR2.DAL\HR2.Helpers\obj\Debug\HR2.Helpers.pdb
+D:\Projects\HR2-Master\HR2\HR2.Helpers\bin\Debug\HR2.Helpers.dll
+D:\Projects\HR2-Master\HR2\HR2.Helpers\bin\Debug\HR2.Helpers.pdb
+D:\Projects\HR2-Master\HR2\HR2.Helpers\obj\Debug\HR2.Helpers.csprojResolveAssemblyReference.cache
+D:\Projects\HR2-Master\HR2\HR2.Helpers\obj\Debug\HR2.Helpers.dll
+D:\Projects\HR2-Master\HR2\HR2.Helpers\obj\Debug\HR2.Helpers.pdb

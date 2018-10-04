@@ -1,0 +1,9 @@
+D:\Projects\HR2\HR2.DAL\HR2.ViewModels\bin\Debug\HR2.ViewModels.dll
+D:\Projects\HR2\HR2.DAL\HR2.ViewModels\bin\Debug\HR2.ViewModels.pdb
+D:\Projects\HR2\HR2.DAL\HR2.ViewModels\obj\Debug\HR2.ViewModels.dll
+D:\Projects\HR2\HR2.DAL\HR2.ViewModels\obj\Debug\HR2.ViewModels.pdb
+D:\Projects\HR2-Master\HR2\HR2.ViewModels\bin\Debug\HR2.ViewModels.dll
+D:\Projects\HR2-Master\HR2\HR2.ViewModels\bin\Debug\HR2.ViewModels.pdb
+D:\Projects\HR2-Master\HR2\HR2.ViewModels\obj\Debug\HR2.ViewModels.csprojResolveAssemblyReference.cache
+D:\Projects\HR2-Master\HR2\HR2.ViewModels\obj\Debug\HR2.ViewModels.dll
+D:\Projects\HR2-Master\HR2\HR2.ViewModels\obj\Debug\HR2.ViewModels.pdb

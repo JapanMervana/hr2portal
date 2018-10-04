@@ -1,0 +1,399 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3F33C66D-EAD8-4FD2-B697-F3309889291B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HR2.DAL</RootNamespace>
+    <AssemblyName>HR2.DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="HR2.EF.DAL">
+      <HintPath>..\packages\HR2\HR2.EF.DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="HR2.Utility">
+      <HintPath>..\packages\HR2\HR2.Utility.dll</HintPath>
+    </Reference>
+    <Reference Include="HR2.Utility.Unity">
+      <HintPath>..\packages\HR2\HR2.Utility.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AttendanceLog.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Candidate.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Category.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Company.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Customer.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomizeReport.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomizeStatusCode.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="C__MigrationHistory.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBFactory.cs" />
+    <Compile Include="Department.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentShift.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Designation.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Device.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceCommand.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceLog.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceLogs_10_2016.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceLogs_10_2017.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceLogs_11_2016.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceLogs_11_2017.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceLogs_12_2016.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceLogs_12_2017.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceLogs_1_2017.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceLogs_1_2018.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceLogs_2_2017.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceLogs_2_2018.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceLogs_3_2017.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceLogs_3_2018.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceLogs_4_2017.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceLogs_4_2018.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceLogs_5_2017.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceLogs_5_2018.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceLogs_6_2017.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceLogs_6_2018.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceLogs_7_2016.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceLogs_7_2017.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceLogs_7_2018.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceLogs_8_2016.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceLogs_8_2017.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceLogs_8_2018.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceLogs_9_2016.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceLogs_9_2017.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceLogs_9_2018.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceSetting.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmpAutoLeaveAllotHistory.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Employee.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeCardIssuedDetail.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeCompOffBroker.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeCompOffRequest.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeDocument.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeFamilyMember.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeHistory.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeLeaveCreditHistory.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeLeaveEntry.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeesAudit.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeesBio.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeShift.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeesLeavesBalance.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeSpecialEntry.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeesTimeSheet.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeTraining.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExcelAttendanceLogs_Report.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExcelDeviceLogs_Report.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAttendance_Result.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetExtraHours_Result.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Get_IN_OUT_Result.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Get_Month_Result.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Holiday.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HolidayGroup.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HR2.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HR2.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HR2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HR2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HR2.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="JobTitle.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LeaveType.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LeaveTypeHistory.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Location.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MailDetail.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MasterSetting.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MessageLog.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MultiShift.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MultiShiftAttendanceLog.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MultiShiftDepartmentShift.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MultiShiftEmployeeShift.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MultiShiftGroup.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Permission.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Project.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectActivity.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\AttendanceSummaryService.cs" />
+    <Compile Include="Shift.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ShiftGroup.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ShiftRoster.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ShiftRosterShift.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SystemUser.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TimeSheetHour.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Training.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserCompany.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserPermission.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UsersFP.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserTokenCach.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Vacancy.cs">
+      <DependentUpon>HR2.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <EntityDeploy Include="HR2.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>HR2.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="HR2.edmx.diagram">
+      <DependentUpon>HR2.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HR2.Helpers\HR2.Helpers.csproj">
+      <Project>{bd2aa14d-5249-4705-940e-a9445b4b15ab}</Project>
+      <Name>HR2.Helpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HR2.ViewModels\HR2.ViewModels.csproj">
+      <Project>{8ea5093c-cc6c-410e-a581-fceef85a31a1}</Project>
+      <Name>HR2.ViewModels</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="HR2.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HR2.edmx</DependentUpon>
+      <LastGenOutput>HR2.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="HR2.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HR2.edmx</DependentUpon>
+      <LastGenOutput>HR2.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,2428 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HR2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <ComplexType Name="GetExtraHours_Result">
+    <Property Name="extrahour" Type="String" MaxLength="34" FixedLength="false" Unicode="false" />
+  </ComplexType>
+  <EntityType Name="C__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="CategoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CategorySName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="OTFormula" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MinOT" Type="Int32" Nullable="false" />
+    <Property Name="IsMaxOT" Type="Int32" Nullable="false" />
+    <Property Name="MaxOT" Type="Int32" Nullable="false" />
+    <Property Name="IsConsiderFirstAndLastPunch" Type="Int32" Nullable="false" />
+    <Property Name="GraceTimeForLateComing" Type="Int32" Nullable="false" />
+    <Property Name="GracetimeForEarlyGoing" Type="Int32" Nullable="false" />
+    <Property Name="IsNeglectLastInPunch" Type="Int32" Nullable="false" />
+    <Property Name="IsWeeklyOff1" Type="Int32" Nullable="false" />
+    <Property Name="WeeklyOff1Day" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IsWeeklyOff2" Type="Int32" Nullable="false" />
+    <Property Name="WeeklyOff2Day" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="WeeklyOff2days" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsConsiderEarlyComingPunch" Type="Int32" />
+    <Property Name="IsConsiderLateGoingPunch" Type="Int32" />
+    <Property Name="IsDeductBreakHourFromD" Type="Int32" Nullable="false" />
+    <Property Name="IsCHalfForLessD" Type="Int32" Nullable="false" />
+    <Property Name="CHalfForLessDMins" Type="Int32" Nullable="false" />
+    <Property Name="IsCAbsentDisLessThan" Type="Int32" Nullable="false" />
+    <Property Name="CAbsentDisLessThanMins" Type="Int32" Nullable="false" />
+    <Property Name="IsCHalfForLessD_P" Type="Int32" Nullable="false" />
+    <Property Name="CHalfForLessDMins_P" Type="Int32" Nullable="false" />
+    <Property Name="IsCAbsentDisLessThan_P" Type="Int32" Nullable="false" />
+    <Property Name="CAbsentDisLessThanMins_P" Type="Int32" Nullable="false" />
+    <Property Name="IsPrefixMarkWOAndHAbsent" Type="Int32" Nullable="false" />
+    <Property Name="IsSuffixMarkWOAndHAbsent" Type="Int32" Nullable="false" />
+    <Property Name="IsBothMarkWOAndHAbsent" Type="Int32" Nullable="false" />
+    <Property Name="IsMark" Type="Int32" Nullable="false" />
+    <Property Name="AbsentType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LateDay" Type="Int32" Nullable="false" />
+    <Property Name="IsMarkHalfDay_LateBy" Type="Int32" Nullable="false" />
+    <Property Name="MarkHalfDay_LateByMins" Type="Int32" Nullable="false" />
+    <Property Name="IsMarkHalfDay_EarlyGoing" Type="Int32" Nullable="false" />
+    <Property Name="MarkHalfDay_EarlyGoing" Type="Int32" Nullable="false" />
+    <Property Name="RecordStatus" Type="Int32" Nullable="false" />
+    <Property Name="ForSinglePunch" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="ConsiderWP_HPInOT" Type="Int32" />
+    <Property Name="IsCalculateHalfCompOff" Type="Int32" />
+    <Property Name="IsCalculateNoCompOff" Type="Int32" />
+    <Property Name="CalculateHalfCompOffMins" Type="Int32" />
+    <Property Name="CalculateNoCompOffMins" Type="Int32" />
+    <Property Name="IsContiLateByWithEarlyBy" Type="Int32" />
+    <Property Name="IsDeductBreakDuInOTWOHP" Type="Int32" />
+    <Property Name="FlexiShiftId" Type="Int32" />
+    <Property Name="IsAdjustLateComWithEarly" Type="Int32" />
+    <Property Name="AdjustLateComWithEarlyDays" Type="Int32" />
+    <Property Name="IsDeductCon_Le_Ab_LateByDays" Type="Int32" />
+    <Property Name="IsDeduct_Le_Ab_LateByMins" Type="Int32" />
+    <Property Name="IsDeduct_Le_Ab_EarlByMins" Type="Int32" />
+    <Property Name="IsPerformSameConsecutiveLate" Type="Int32" />
+    <Property Name="IsDeductContiLateLeave" Type="Int32" />
+    <Property Name="IsDeductLateByLeave" Type="Int32" />
+    <Property Name="IsDeductEarlyByLeave" Type="Int32" />
+    <Property Name="DeductContiLateLeaveDay" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DeductContiLateLeaveType1" Type="Int32" />
+    <Property Name="DeductContiLateLeaveType2" Type="Int32" />
+    <Property Name="DeductContiLateLeaveType3" Type="Int32" />
+    <Property Name="DeductContiLateLeaveLateFor" Type="Int32" />
+    <Property Name="LateEarlyRecurringType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DeductLateByLeaveDay" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DeductLateByLeaveType1" Type="Int32" />
+    <Property Name="DeductLateByLeaveType2" Type="Int32" />
+    <Property Name="DeductLateByLeaveType3" Type="Int32" />
+    <Property Name="DeductLateByLeaveLateFor" Type="Int32" />
+    <Property Name="DeductEarlyByLeaveDay" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DeductEarlyByLeaveType1" Type="Int32" />
+    <Property Name="DeductEarlyByLeaveType2" Type="Int32" />
+    <Property Name="DeductEarlyByLeaveType3" Type="Int32" />
+    <Property Name="DeductEarlyByLeaveEarlyFor" Type="Int32" />
+    <Property Name="IsDeductCon_Le_Ab_EarlyByDays" Type="Int32" />
+    <Property Name="IsMarkConEarly" Type="Int32" />
+    <Property Name="AbsentTypeConEarly" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ConEarlyDay" Type="Int32" />
+    <Property Name="IsDeductContiEarlyLeave" Type="Int32" />
+    <Property Name="DeductContiEarlyLeaveDay" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DeductContiEarlyLeaveType1" Type="Int32" />
+    <Property Name="DeductContiEarlyLeaveType2" Type="Int32" />
+    <Property Name="DeductContiEarlyLeaveType3" Type="Int32" />
+    <Property Name="DeductContiEarlyLeaveEarlyFor" Type="Int32" />
+    <Property Name="IsPerformSameConsecutiveEarly" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="CompanyId" />
+    </Key>
+    <Property Name="CompanyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyFName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CompanySName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CompanyAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CompanyIsVisible" Type="Int32" />
+    <Property Name="CompanyeMail" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CompanyWebsite" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RecordStatus" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="CustomerId" />
+    </Key>
+    <Property Name="CustomerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="CustomizeReport">
+    <Key>
+      <PropertyRef Name="CustomizeReportId" />
+    </Key>
+    <Property Name="CustomizeReportId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Group1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Group2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field6" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field7" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field8" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field9" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field10" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field11" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field12" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field13" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field14" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field15" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field16" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field17" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field18" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field19" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field20" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field21" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field22" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field23" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field24" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field25" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field26" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field27" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field28" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field29" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field30" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field31" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="CustomizeStatusCode">
+    <Key>
+      <PropertyRef Name="CustomizeStatusCodeId" />
+    </Key>
+    <Property Name="CustomizeStatusCodeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MainStatusCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CustomStatusCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="DepartmentId" />
+    </Key>
+    <Property Name="DepartmentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DepartmentFName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DepartmentSName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RecordStatus" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DeviceCommand">
+    <Key>
+      <PropertyRef Name="DeviceCommandId" />
+    </Key>
+    <Property Name="DeviceCommandId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="DeviceCommand1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SerialNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreationDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExecutionDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ReturnValue" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Device">
+    <Key>
+      <PropertyRef Name="DeviceId" />
+    </Key>
+    <Property Name="DeviceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DeviceFName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DeviceSName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DeviceDirection" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SerialNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ConnectionType" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IpAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="BaudRate" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ComPort" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="LastLogDownloadDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CommKey" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TransactionStamp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LastPing" Type="DateTime" Precision="3" />
+    <Property Name="DeviceType" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="OpStamp" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DownLoadType" Type="Int32" />
+    <Property Name="Timezone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DeviceLocation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TimeOut" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsRealTime" Type="Int32" />
+    <Property Name="TransTimes" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="TransInterval" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="DeviceVendor" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="DeviceInfo" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="TransFlag" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MasterDeviceId" Type="Int32" />
+    <Property Name="CompanyId" Type="Int32" />
+    <Property Name="DownloadedLogCount" Type="Int32" />
+  </EntityType>
+  <EntityType Name="EmployeeCardIssuedDetail">
+    <Key>
+      <PropertyRef Name="EmployeeCardIssuedDetailsId" />
+    </Key>
+    <Property Name="EmployeeCardIssuedDetailsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeId" Type="Int32" />
+    <Property Name="IssueDate" Type="DateTime" Precision="3" />
+    <Property Name="NoOfTime" Type="Int32" />
+    <Property Name="CardNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="EmployeeCompOffBroker">
+    <Key>
+      <PropertyRef Name="EmployeeCompOffBrokerId" />
+    </Key>
+    <Property Name="EmployeeCompOffBrokerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeId" Type="Int32" />
+    <Property Name="CompOffDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="EmployeeCompOffRequest">
+    <Key>
+      <PropertyRef Name="EmployeeCompOffRequestId" />
+    </Key>
+    <Property Name="EmployeeCompOffRequestId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeId" Type="Int32" />
+    <Property Name="WOP_HPDate" Type="DateTime" Precision="3" />
+    <Property Name="Reason" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="IsApproved" Type="Int32" />
+    <Property Name="ApprovedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="EmployeeDocument">
+    <Key>
+      <PropertyRef Name="EmployeeDocumentId" />
+    </Key>
+    <Property Name="EmployeeDocumentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeId" Type="Int32" />
+    <Property Name="DocumentTitle" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="UploadedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Extension" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="EmployeeFamilyMember">
+    <Key>
+      <PropertyRef Name="EmployeeFamilyMemberId" />
+    </Key>
+    <Property Name="EmployeeFamilyMemberId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeId" Type="Int32" />
+    <Property Name="IsNominated" Type="Int32" />
+    <Property Name="IsDependent" Type="Int32" />
+    <Property Name="IsCoveredUnderMediclaim" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="DateOfBirth" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Nationality" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Gender" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="BloodGroup" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Profession" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Relationship" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="MedicalHistory" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="EmployeeId" />
+    </Key>
+    <Property Name="EmployeeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EmployeeCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StringCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NumericCode" Type="Int32" />
+    <Property Name="Gender" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CompanyId" Type="Int32" Nullable="false" />
+    <Property Name="DepartmentId" Type="Int32" Nullable="false" />
+    <Property Name="Designation" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CategoryId" Type="Int32" Nullable="false" />
+    <Property Name="DOJ" Type="DateTime" Precision="3" />
+    <Property Name="DOR" Type="DateTime" Precision="3" />
+    <Property Name="DOC" Type="DateTime" Precision="3" />
+    <Property Name="EmployeeCodeInDevice" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EmployeeRFIDNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="EmployementType" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Status" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EmployeeDevicePassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EmployeeDeviceGroup" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FatherName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="MotherName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ResidentialAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PermanentAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ContactNo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DOB" Type="DateTime" Precision="3" />
+    <Property Name="PlaceOfBirth" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Nomenee1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Nomenee2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RecordStatus" Type="Int32" />
+    <Property Name="C1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="C2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="C3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="C4" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="C5" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="C6" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="C7" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Location" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="BLOODGROUP" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="WorkPlace" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ExtensionNo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="LoginName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="LoginPassword" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Grade" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Team" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="IsRecieveNotification" Type="Int32" />
+    <Property Name="HolidayGroup" Type="Int32" />
+    <Property Name="ShiftGroupId" Type="Int32" />
+    <Property Name="LastModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ShiftRotationMasterId" Type="Int32" />
+    <Property Name="ReportTo" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="ShiftType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OfficialPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OfficialMobile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PersonaleMailID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UIDNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PANNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="VoterIdNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EffectiveFrom" Type="DateTime" Precision="3" />
+    <Property Name="ShiftPatternAssignedOn" Type="DateTime" Precision="3" />
+    <Property Name="MultiShiftGroupId" Type="Int32" />
+    <Property Name="AndroidDeviceIMEINo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsMarkAndroidWebAttendance" Type="Int32" />
+    <Property Name="PushNotificationId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsSendApproveDeclineSMS" Type="Int32" />
+    <Property Name="IsSendPushNotification" Type="Int32" />
+    <Property Name="EmployeeAddedFromService" Type="Int32" />
+    <Property Name="BankAccountNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ModeOfPayment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ESINo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ESIDispensary" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PFNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SalaryStructureId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="EmployeesBio">
+    <Key>
+      <PropertyRef Name="EmployeeBioId" />
+    </Key>
+    <Property Name="EmployeeBioId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeCodeInDevice" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Privilege" Type="Int32" Nullable="false" />
+    <Property Name="BioVersion" Type="Int32" Nullable="false" />
+    <Property Name="BioId" Type="Int32" Nullable="false" />
+    <Property Name="Bio" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BioPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CardNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DeviceId" Type="Int32" />
+    <Property Name="RFIDIssuedNoOfTimes" Type="Int32" />
+  </EntityType>
+  <EntityType Name="EmployeesLeavesBalance">
+    <Key>
+      <PropertyRef Name="EmployeeLeaveBalanceId" />
+    </Key>
+    <Property Name="EmployeeLeaveBalanceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeId" Type="Int32" Nullable="false" />
+    <Property Name="LeaveTypeId" Type="Int32" Nullable="false" />
+    <Property Name="LeaveBalance" Type="Double" />
+    <Property Name="LeaveYear" Type="Int32" />
+    <Property Name="LeaveLapse" Type="Int32" />
+    <Property Name="IsLeaveCarryForwarded" Type="Int32" />
+  </EntityType>
+  <EntityType Name="EmployeesTimeSheet">
+    <Key>
+      <PropertyRef Name="EmployeesTimeSheetId" />
+    </Key>
+    <Property Name="EmployeesTimeSheetId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeId" Type="Int32" />
+    <Property Name="StartDate" Type="DateTime" Precision="3" />
+    <Property Name="EndDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="EmployeeTraining">
+    <Key>
+      <PropertyRef Name="EmployeeTrainingId" />
+    </Key>
+    <Property Name="EmployeeTrainingId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TrainingId" Type="Int32" />
+    <Property Name="EmployeeId" Type="Int32" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ExcelAttendanceLogs_Report">
+    <Key>
+      <PropertyRef Name="ExcelAttendanceCustomizeReportId" />
+    </Key>
+    <Property Name="ExcelAttendanceCustomizeReportId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Field1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field6" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field7" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field8" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field9" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field10" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field11" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field12" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field13" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field14" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field15" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field16" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field17" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field18" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field19" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field20" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field21" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field22" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field23" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field24" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field25" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field26" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field27" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field28" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field29" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field30" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field31" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field32" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field33" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="FileNameFormat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsPrefixText" Type="Int32" />
+    <Property Name="PrefixText" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FileExtension" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Field35" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Field36" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Field37" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Field38" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Field34" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ExcelDeviceLogs_Report">
+    <Key>
+      <PropertyRef Name="ExcelDeviceCustomizeReportId" />
+    </Key>
+    <Property Name="ExcelDeviceCustomizeReportId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Field1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field6" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field7" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field8" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Field9" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="FileNameFormat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsPrefixText" Type="Int32" />
+    <Property Name="PrefixText" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FileExtension" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Field10" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Field11" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Field12" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FieldSeprator" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Holiday">
+    <Key>
+      <PropertyRef Name="HolidayId" />
+    </Key>
+    <Property Name="HolidayId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HolidayName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CompanyId" Type="Int32" Nullable="false" />
+    <Property Name="HolidayDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RecordStatus" Type="Int32" Nullable="false" />
+    <Property Name="HolidayType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HolidayGroupId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="JobTitle">
+    <Key>
+      <PropertyRef Name="JobTitleId" />
+    </Key>
+    <Property Name="JobTitleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="JobTitleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="LeaveType">
+    <Key>
+      <PropertyRef Name="LeaveTypeId" />
+    </Key>
+    <Property Name="LeaveTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LeaveTypeName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="LeaveTypeCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="CarryForwardLimit" Type="Double" />
+    <Property Name="Gender" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="YearlyLimit" Type="Double" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="IsAllowNegativeBalance" Type="Int32" />
+    <Property Name="RecordStatus" Type="Int32" />
+    <Property Name="AllotOnMonthDay" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AllotmentType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsLeaveEncashment" Type="Int32" />
+    <Property Name="LeaveEncashmentMinBalance" Type="Double" />
+    <Property Name="IsLossOfPay" Type="Int32" />
+    <Property Name="AllotFrom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AllotAfterDaysEmployment" Type="Int32" />
+    <Property Name="IncreaseLeaveBy" Type="Double" />
+    <Property Name="EmploymentCompleted" Type="Int32" />
+    <Property Name="AvailFrom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AvailAfterDaysEmployment" Type="Int32" />
+    <Property Name="LastLeaveCreditedOn" Type="DateTime" Precision="3" />
+    <Property Name="LeaveTypeEffFrom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GraceDaysForConfirmation" Type="Int32" />
+    <Property Name="GraceDaysEmploymentCompleted" Type="Int32" />
+  </EntityType>
+  <EntityType Name="MasterSetting">
+    <Key>
+      <PropertyRef Name="MasterDetailsId" />
+    </Key>
+    <Property Name="MasterDetailsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IsAlphaNumericEmployeeCode" Type="Int32" Nullable="false" />
+    <Property Name="IsFixedShift" Type="Int32" Nullable="false" />
+    <Property Name="ShiftBeginTime" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ShiftEndTime" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="IsDeviceCodeSame" Type="Int32" Nullable="false" />
+    <Property Name="AttendanceYearStartOn" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="LiecenceKey" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PunchBeginDuration" Type="Int32" />
+    <Property Name="Version" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MinDiffBetweenTwoPunch" Type="Int32" />
+    <Property Name="IsAutoShift" Type="Int32" />
+    <Property Name="MemoLateEarlySubject" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="MemoMissedPunchSubject" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="MemoSignature" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="MemoAbsentText" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="MemoLateEarlyText" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="MemoMissedPunchText" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="MemoAbsentSubject" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="MemoHalfDayForLateEarlySubject" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="MemoHalfDayForLateEarlyText" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="TrialDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsAutoBackUp" Type="Int32" />
+    <Property Name="AutoBackuppath" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="BackupDays" Type="Int32" />
+    <Property Name="LastBackupDate" Type="DateTime" Precision="3" />
+    <Property Name="RestrictedHolidayLimit" Type="Int32" />
+    <Property Name="Duration_LateBy_EarlyByInMins" Type="Int32" />
+    <Property Name="EmployeePhotoRepository" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="EmployeeDocumentRepository" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="IsUsePushDataCollectorService" Type="Int32" />
+    <Property Name="ODAppliedBeforeDays" Type="Int32" />
+    <Property Name="IsBiometricAttendance" Type="Int32" />
+    <Property Name="WEBURL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsLockAttendance" Type="Int32" />
+    <Property Name="AttendanceLockOn" Type="Int32" />
+    <Property Name="QuarterDayLeaveDuration" Type="Int32" />
+    <Property Name="DEFAULTGROUPBYREPORTS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsBackgroundLeaveRunning" Type="Int32" />
+    <Property Name="OptionalHolidayType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CloudURL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CloudCompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CalcAutoShiftAsPer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsSendRealTimeMail" Type="Int32" />
+    <Property Name="IsShowDailyCustomReport1" Type="Int32" />
+    <Property Name="IsShowDailyCustomReport2" Type="Int32" />
+    <Property Name="IsShowDailyCustomReport3" Type="Int32" />
+    <Property Name="IsShowMonthlyCustomReport1" Type="Int32" />
+    <Property Name="IsShowMonthlyCustomReport2" Type="Int32" />
+    <Property Name="IsShowMonthlyCustomReport3" Type="Int32" />
+    <Property Name="DailyCustomizeReport1Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DailyCustomizeReport2Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DailyCustomizeReport3Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MonthlyCustomizeReport1Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MonthlyCustomizeReport2Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MonthlyCustomizeReport3Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SMSprovision" Type="Int32" />
+    <Property Name="RestrictedHolidayprovision" Type="Int32" />
+    <Property Name="CompOffprovision" Type="Int32" />
+    <Property Name="MultiShift" Type="Int32" />
+    <Property Name="ShiftRoster" Type="Int32" />
+    <Property Name="AppPhysicalPath" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="MessageLog">
+    <Key>
+      <PropertyRef Name="MessageLogId" />
+    </Key>
+    <Property Name="MessageLogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DownloadDate" Type="DateTime" Precision="3" />
+    <Property Name="EmployeeCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MessageText" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="IsSuccess" Type="Int32" />
+    <Property Name="LogDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SMSLogMobileNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Permission">
+    <Key>
+      <PropertyRef Name="PermissionId" />
+    </Key>
+    <Property Name="PermissionId" Type="Int32" Nullable="false" />
+    <Property Name="Permission1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ParentId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProjectActivity">
+    <Key>
+      <PropertyRef Name="ProjectActivityId" />
+    </Key>
+    <Property Name="ProjectActivityId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectId" Type="Int32" />
+    <Property Name="ActivityName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Project">
+    <Key>
+      <PropertyRef Name="ProjectId" />
+    </Key>
+    <Property Name="ProjectId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerId" Type="Int32" />
+    <Property Name="ProjectName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ProjectAdminId" Type="Int32" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ShiftRoster">
+    <Key>
+      <PropertyRef Name="ShiftRotationMasterId" />
+    </Key>
+    <Property Name="ShiftRotationMasterId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ShiftRotationMasterName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BeginDay" Type="DateTime" Precision="3" />
+    <Property Name="EndDay" Type="DateTime" Precision="3" />
+    <Property Name="SHIFTROTATIONTYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MondayShiftId" Type="Int32" />
+    <Property Name="TuesdayShiftId" Type="Int32" />
+    <Property Name="WednesdayShiftId" Type="Int32" />
+    <Property Name="ThursdayShiftId" Type="Int32" />
+    <Property Name="FridayShiftId" Type="Int32" />
+    <Property Name="SaturdayShiftId" Type="Int32" />
+    <Property Name="SundayShiftId" Type="Int32" />
+    <Property Name="ShiftId1" Type="Int32" />
+    <Property Name="ShiftId2" Type="Int32" />
+    <Property Name="ShiftId3" Type="Int32" />
+    <Property Name="ShiftId4" Type="Int32" />
+    <Property Name="ShiftId5" Type="Int32" />
+    <Property Name="ShiftId6" Type="Int32" />
+    <Property Name="ShiftId7" Type="Int32" />
+    <Property Name="ShiftId8" Type="Int32" />
+    <Property Name="ShiftId9" Type="Int32" />
+    <Property Name="ShiftId10" Type="Int32" />
+    <Property Name="ShiftId20" Type="Int32" />
+    <Property Name="ShiftId19" Type="Int32" />
+    <Property Name="ShiftId18" Type="Int32" />
+    <Property Name="ShiftId17" Type="Int32" />
+    <Property Name="ShiftId16" Type="Int32" />
+    <Property Name="ShiftId15" Type="Int32" />
+    <Property Name="ShiftId14" Type="Int32" />
+    <Property Name="ShiftId13" Type="Int32" />
+    <Property Name="ShiftId12" Type="Int32" />
+    <Property Name="ShiftId11" Type="Int32" />
+    <Property Name="ShiftId30" Type="Int32" />
+    <Property Name="ShiftId29" Type="Int32" />
+    <Property Name="ShiftId28" Type="Int32" />
+    <Property Name="ShiftId27" Type="Int32" />
+    <Property Name="ShiftId26" Type="Int32" />
+    <Property Name="ShiftId25" Type="Int32" />
+    <Property Name="ShiftId24" Type="Int32" />
+    <Property Name="ShiftId23" Type="Int32" />
+    <Property Name="ShiftId22" Type="Int32" />
+    <Property Name="ShiftId21" Type="Int32" />
+    <Property Name="ShiftId31" Type="Int32" />
+    <Property Name="WeeklyOff1" Type="Int32" />
+    <Property Name="WeeklyOff2" Type="Int32" />
+    <Property Name="WeeklyOff1Day" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="WeeklyOff2Day" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="WeeklyOff2Occurrence" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ShiftRosterShift">
+    <Key>
+      <PropertyRef Name="ShiftRosterShiftId" />
+    </Key>
+    <Property Name="ShiftRosterShiftId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ShiftRotationMasterId" Type="Int32" />
+    <Property Name="ShiftDate" Type="DateTime" Precision="3" />
+    <Property Name="ShiftId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Shift">
+    <Key>
+      <PropertyRef Name="ShiftId" />
+    </Key>
+    <Property Name="ShiftId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ShiftName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ShiftCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BeginTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EndTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Break1" Type="Int32" Nullable="false" />
+    <Property Name="Break2" Type="Int32" Nullable="false" />
+    <Property Name="Break1BeginTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Break2BeginTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Break1EndTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Break2EndTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ShiftDuration" Type="Int32" Nullable="false" />
+    <Property Name="Break1Duration" Type="Int32" Nullable="false" />
+    <Property Name="Break2Duration" Type="Int32" Nullable="false" />
+    <Property Name="ShiftType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RecordStatus" Type="Int32" Nullable="false" />
+    <Property Name="PunchBeginDuration" Type="Int32" Nullable="false" />
+    <Property Name="PunchEndDuration" Type="Int32" Nullable="false" />
+    <Property Name="IsGraceTimeApplicable" Type="Int32" Nullable="false" />
+    <Property Name="GraceTime" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IsPartialDayApplicable" Type="Int32" Nullable="false" />
+    <Property Name="PartialDay" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PartialDayBeginTime" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PartialDayEndTime" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IsPunchBeginDuration" Type="Int32" />
+    <Property Name="IsPunchEndDuration" Type="Int32" />
+    <Property Name="IsMarkHalfDayTime" Type="Int32" />
+    <Property Name="HalfDayDays" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MarkHalfDayTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsFlexiShiftEndNextDay" Type="Int32" />
+    <Property Name="FlexiShiftNextDayEndTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsPartialDay2Applicable" Type="Int32" />
+    <Property Name="PartialDay2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="HalfDay2Days" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ShiftScheduleType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FlexiShiftDuration" Type="Int32" />
+    <Property Name="FlexiShiftBreakDuration" Type="Int32" />
+    <Property Name="HalfDayStartFrom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HalfDayGraceTime" Type="Int32" />
+  </EntityType>
+  <EntityType Name="SystemUser">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LoginName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LoginPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RoleName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="IsAdmin" Type="Int32" Nullable="false" />
+    <Property Name="RecordStatus" Type="Int32" />
+    <Property Name="AccessI" Type="Int32" />
+    <Property Name="LastLogin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TimeSheetHour">
+    <Key>
+      <PropertyRef Name="TimeSheetHoursId" />
+    </Key>
+    <Property Name="TimeSheetHoursId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeesTimeSheetId" Type="Int32" />
+    <Property Name="ProjectId" Type="Int32" />
+    <Property Name="ProjectActivityId" Type="Int32" />
+    <Property Name="MondayHour" Type="Int32" />
+    <Property Name="TuesdayHour" Type="Int32" />
+    <Property Name="WednesdayHour" Type="Int32" />
+    <Property Name="ThursdayHour" Type="Int32" />
+    <Property Name="FridayHour" Type="Int32" />
+    <Property Name="SaturdayHour" Type="Int32" />
+    <Property Name="SundayHour" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Training">
+    <Key>
+      <PropertyRef Name="TrainingId" />
+    </Key>
+    <Property Name="TrainingId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CourseName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyId" Type="Int32" />
+    <Property Name="DateSchedule" Type="DateTime" Precision="3" />
+    <Property Name="CoordinatorId" Type="Int32" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TrainingTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="UserCompany">
+    <Key>
+      <PropertyRef Name="UserCompanyId" />
+    </Key>
+    <Property Name="UserCompanyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="CompanyId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserPermission">
+    <Key>
+      <PropertyRef Name="UserPermissionId" />
+    </Key>
+    <Property Name="UserPermissionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="PermissionId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UsersFP">
+    <Key>
+      <PropertyRef Name="UsersFPId" />
+    </Key>
+    <Property Name="UsersFPId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeCodeInDevice" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="BioVersion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FID" Type="Int32" />
+    <Property Name="FingerPrint" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="UserTokenCach">
+    <Key>
+      <PropertyRef Name="UserTokenCacheId" />
+    </Key>
+    <Property Name="UserTokenCacheId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="webUserUniqueId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="cacheBits" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="LastWrite" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Vacancy">
+    <Key>
+      <PropertyRef Name="VacancyId" />
+    </Key>
+    <Property Name="VacancyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="JobTitleId" Type="Int32" />
+    <Property Name="VacancyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HiringManagerId" Type="Int32" />
+    <Property Name="NumberOfPosition" Type="Int32" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Int32" />
+  </EntityType>
+  <EntityType Name="AttendanceLog">
+    <Key>
+      <PropertyRef Name="AttendanceLogId" />
+      <PropertyRef Name="AttendanceDate" />
+      <PropertyRef Name="EmployeeId" />
+      <PropertyRef Name="Duration" />
+      <PropertyRef Name="LateBy" />
+      <PropertyRef Name="EarlyBy" />
+      <PropertyRef Name="IsOnLeave" />
+      <PropertyRef Name="IsonSpecialOff" />
+      <PropertyRef Name="WeeklyOff" />
+      <PropertyRef Name="Holiday" />
+      <PropertyRef Name="PunchRecords" />
+      <PropertyRef Name="ShiftId" />
+      <PropertyRef Name="Present" />
+      <PropertyRef Name="Absent" />
+      <PropertyRef Name="Status" />
+      <PropertyRef Name="StatusCode" />
+      <PropertyRef Name="OverTime" />
+      <PropertyRef Name="OverTimeE" />
+      <PropertyRef Name="MissedOutPunch" />
+    </Key>
+    <Property Name="AttendanceLogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AttendanceDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EmployeeId" Type="Int32" Nullable="false" />
+    <Property Name="InTime" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="InDeviceId" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="OutTime" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="OutDeviceId" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Duration" Type="Double" Nullable="false" />
+    <Property Name="LateBy" Type="Int32" Nullable="false" />
+    <Property Name="EarlyBy" Type="Int32" Nullable="false" />
+    <Property Name="IsOnLeave" Type="Int32" Nullable="false" />
+    <Property Name="LeaveTypeId" Type="Int32" />
+    <Property Name="LeaveType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LeaveDuration" Type="Double" />
+    <Property Name="LeaveStatus" Type="Double" />
+    <Property Name="LeaveRemarks" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="IsonSpecialOff" Type="Int32" Nullable="false" />
+    <Property Name="SpecialOffType" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SpecialOffRemark" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="SpecialOffDuration" Type="Int32" />
+    <Property Name="WeeklyOff" Type="Int32" Nullable="false" />
+    <Property Name="Holiday" Type="Int32" Nullable="false" />
+    <Property Name="PunchRecords" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PunchDirections" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PunchDevicesName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ShiftId" Type="Int32" Nullable="false" />
+    <Property Name="Present" Type="Double" Nullable="false" />
+    <Property Name="Absent" Type="Double" Nullable="false" />
+    <Property Name="DetailedStatus" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DetailedStatusCode" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="StatusCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="P1Status" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="P2Status" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="P3Status" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="OverTime" Type="Int32" Nullable="false" />
+    <Property Name="OverTimeE" Type="Int32" Nullable="false" />
+    <Property Name="MissedOutPunch" Type="Int32" Nullable="false" />
+    <Property Name="MissedInPunch" Type="Int32" />
+    <Property Name="Remarks" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="IsOnRestrictedHoliday" Type="Int32" />
+    <Property Name="IsOnCompOff" Type="Int32" />
+    <Property Name="IsPartialDay" Type="Int32" />
+    <Property Name="ReportPunchRecords" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SMSFlag" Type="Int32" />
+    <Property Name="CompOff" Type="Double" />
+    <Property Name="ApplicableSession" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LateByAdjustment" Type="Int32" />
+    <Property Name="EarlyByAdjustment" Type="Int32" />
+    <Property Name="LateComEarlygoingAdjustment" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Candidate">
+    <Key>
+      <PropertyRef Name="CandidateId" />
+    </Key>
+    <Property Name="CandidateId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VacancyId" Type="Int32" />
+    <Property Name="CandidateStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CandidateName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ZipCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MobileNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="eMail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Keywords" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Comment" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="DateOfApplication" Type="DateTime" Precision="3" />
+    <Property Name="MaritialStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="DepartmentShift">
+    <Key>
+      <PropertyRef Name="DepartmentShiftId" />
+      <PropertyRef Name="DepartmentId" />
+      <PropertyRef Name="ShiftDate" />
+      <PropertyRef Name="ShiftId" />
+      <PropertyRef Name="LastModifiedDate" />
+    </Key>
+    <Property Name="DepartmentShiftId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DepartmentId" Type="Int32" Nullable="false" />
+    <Property Name="ShiftDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ShiftId" Type="Int32" Nullable="false" />
+    <Property Name="ShiftType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Designation">
+    <Key>
+      <PropertyRef Name="DesignationId" />
+    </Key>
+    <Property Name="DesignationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DesignationsName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DesignationCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NormalNoticePeriodRequired" Type="Int32" />
+    <Property Name="ProbationNoticePeriodRequired" Type="Int32" />
+  </EntityType>
+  <EntityType Name="DeviceLog">
+    <Key>
+      <PropertyRef Name="DeviceLogId" />
+      <PropertyRef Name="DownloadDate" />
+      <PropertyRef Name="DeviceId" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="LogDate" />
+      <PropertyRef Name="Direction" />
+      <PropertyRef Name="AttDirection" />
+    </Key>
+    <Property Name="DeviceLogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DownloadDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DeviceId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LogDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Direction" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AttDirection" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AlternateAttDirection" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="StatusCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="WorkCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Duration" Type="Int32" />
+    <Property Name="Remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="SMSFlag" Type="Int32" />
+    <Property Name="VerificationMode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsApproved" Type="Int32" />
+    <Property Name="AttenndanceMarkingType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AttMarkAndroidIMEINo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ManagerRemarks" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="LogRecordLocation" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="DeviceLogs_1_2017">
+    <Key>
+      <PropertyRef Name="DeviceLogId" />
+      <PropertyRef Name="DownloadDate" />
+      <PropertyRef Name="DeviceId" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="LogDate" />
+      <PropertyRef Name="Direction" />
+      <PropertyRef Name="AttDirection" />
+    </Key>
+    <Property Name="DeviceLogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AttenndanceMarkingType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DownloadDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DeviceId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LogDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Direction" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AttDirection" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AlternateAttDirection" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="StatusCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="WorkCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Duration" Type="Int32" />
+    <Property Name="Remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="SMSFlag" Type="Int32" />
+    <Property Name="VerificationMode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsApproved" Type="Int32" />
+    <Property Name="LogRecordLocation" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ManagerRemarks" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="AttMarkAndroidIMEINo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="DeviceLogs_1_2018">
+    <Key>
+      <PropertyRef Name="DeviceLogId" />
+      <PropertyRef Name="DownloadDate" />
+      <PropertyRef Name="DeviceId" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="LogDate" />
+      <PropertyRef Name="Direction" />
+      <PropertyRef Name="AttDirection" />
+    </Key>
+    <Property Name="DeviceLogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AttenndanceMarkingType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DownloadDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DeviceId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LogDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Direction" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AttDirection" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AlternateAttDirection" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="StatusCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="WorkCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Duration" Type="Int32" />
+    <Property Name="Remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="SMSFlag" Type="Int32" />
+    <Property Name="VerificationMode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsApproved" Type="Int32" />
+    <Property Name="LogRecordLocation" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ManagerRemarks" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="AttMarkAndroidIMEINo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="DeviceLogs_10_2016">
+    <Key>
+      <PropertyRef Name="DeviceLogId" />
+      <PropertyRef Name="DownloadDate" />
+      <PropertyRef Name="DeviceId" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="LogDate" />
+      <PropertyRef Name="Direction" />
+      <PropertyRef Name="AttDirection" />
+    </Key>
+    <Property Name="DeviceLogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DownloadDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DeviceId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LogDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Direction" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AttDirection" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AlternateAttDirection" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="StatusCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="WorkCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Duration" Type="Int32" />
+    <Property Name="Remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="SMSFlag" Type="Int32" />
+    <Property Name="VerificationMode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsApproved" Type="Int32" />
+    <Property Name="AttenndanceMarkingType" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="AttMarkAndroidIMEINo" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="ManagerRemarks" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="LogRecordLocation" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="DeviceLogs_10_2017">
+    <Key>
+      <PropertyRef Name="DeviceLogId" />
+      <PropertyRef Name="DownloadDate" />
+      <PropertyRef Name="DeviceId" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="LogDate" />
+      <PropertyRef Name="Direction" />
+      <PropertyRef Name="AttDirection" />
+    </Key>
+    <Property Name="DeviceLogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AttenndanceMarkingType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DownloadDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DeviceId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LogDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Direction" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AttDirection" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AlternateAttDirection" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="StatusCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="WorkCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Duration" Type="Int32" />
+    <Property Name="Remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="SMSFlag" Type="Int32" />
+    <Property Name="VerificationMode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsApproved" Type="Int32" />
+    <Property Name="LogRecordLocation" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ManagerRemarks" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="AttMarkAndroidIMEINo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="DeviceLogs_11_2016">
+    <Key>
+      <PropertyRef Name="DeviceLogId" />
+      <PropertyRef Name="DownloadDate" />
+      <PropertyRef Name="DeviceId" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="LogDate" />
+      <PropertyRef Name="Direction" />
+      <PropertyRef Name="AttDirection" />
+    </Key>
+    <Property Name="DeviceLogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DownloadDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DeviceId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LogDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Direction" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AttDirection" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AlternateAttDirection" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="StatusCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="WorkCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Duration" Type="Int32" />
+    <Property Name="Remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="SMSFlag" Type="Int32" />
+    <Property Name="VerificationMode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsApproved" Type="Int32" />
+    <Property Name="AttenndanceMarkingType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AttMarkAndroidIMEINo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ManagerRemarks" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="LogRecordLocation" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="DeviceLogs_11_2017">
+    <Key>
+      <PropertyRef Name="DeviceLogId" />
+      <PropertyRef Name="DownloadDate" />
+      <PropertyRef Name="DeviceId" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="LogDate" />
+      <PropertyRef Name="Direction" />
+      <PropertyRef Name="AttDirection" />
+    </Key>
+    <Property Name="DeviceLogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AttenndanceMarkingType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DownloadDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DeviceId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LogDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Direction" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AttDirection" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AlternateAttDirection" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="StatusCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="WorkCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Duration" Type="Int32" />
+    <Property Name="Remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="SMSFlag" Type="Int32" />
+    <Property Name="VerificationMode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsApproved" Type="Int32" />
+    <Property Name="LogRecordLocation" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ManagerRemarks" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="AttMarkAndroidIMEINo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="DeviceLogs_12_2016">
+    <Key>
+      <PropertyRef Name="DeviceLogId" />
+      <PropertyRef Name="DownloadDate" />
+      <PropertyRef Name="DeviceId" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="LogDate" />
+      <PropertyRef Name="Direction" />
+      <PropertyRef Name="AttDirection" />
+    </Key>
+    <Property Name="DeviceLogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AttenndanceMarkingType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DownloadDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DeviceId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LogDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Direction" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AttDirection" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AlternateAttDirection" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="StatusCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="WorkCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Duration" Type="Int32" />
+    <Property Name="Remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="SMSFlag" Type="Int32" />
+    <Property Name="VerificationMode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsApproved" Type="Int32" />
+    <Property Name="LogRecordLocation" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ManagerRemarks" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="AttMarkAndroidIMEINo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="DeviceLogs_12_2017">
+    <Key>
+      <PropertyRef Name="DeviceLogId" />
+      <PropertyRef Name="DownloadDate" />
+      <PropertyRef Name="DeviceId" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="LogDate" />
+      <PropertyRef Name="Direction" />
+      <PropertyRef Name="AttDirection" />
+    </Key>
+    <Property Name="DeviceLogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AttenndanceMarkingType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DownloadDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DeviceId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LogDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Direction" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AttDirection" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AlternateAttDirection" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="StatusCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="WorkCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Duration" Type="Int32" />
+    <Property Name="Remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="SMSFlag" Type="Int32" />
+    <Property Name="VerificationMode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsApproved" Type="Int32" />
+    <Property Name="LogRecordLocation" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ManagerRemarks" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="AttMarkAndroidIMEINo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="DeviceLogs_2_2017">
+    <Key>
+      <PropertyRef Name="DeviceLogId" />
+      <PropertyRef Name="DownloadDate" />
+      <PropertyRef Name="DeviceId" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="LogDate" />
+      <PropertyRef Name="Direction" />
+      <PropertyRef Name="AttDirection" />
+    </Key>
+    <Property Name="DeviceLogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AttenndanceMarkingType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DownloadDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DeviceId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LogDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Direction" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AttDirection" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AlternateAttDirection" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="StatusCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="WorkCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Duration" Type="Int32" />
+    <Property Name="Remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="SMSFlag" Type="Int32" />
+    <Property Name="VerificationMode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsApproved" Type="Int32" />
+    <Property Name="LogRecordLocation" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ManagerRemarks" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="AttMarkAndroidIMEINo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="DeviceLogs_2_2018">
+    <Key>
+      <PropertyRef Name="DeviceLogId" />
+      <PropertyRef Name="DownloadDate" />
+      <PropertyRef Name="DeviceId" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="LogDate" />
+      <PropertyRef Name="Direction" />
+      <PropertyRef Name="AttDirection" />
+    </Key>
+    <Property Name="DeviceLogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AttenndanceMarkingType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DownloadDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DeviceId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LogDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Direction" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AttDirection" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AlternateAttDirection" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="StatusCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="WorkCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Duration" Type="Int32" />
+    <Property Name="Remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="SMSFlag" Type="Int32" />
+    <Property Name="VerificationMode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsApproved" Type="Int32" />
+    <Property Name="LogRecordLocation" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ManagerRemarks" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="AttMarkAndroidIMEINo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="DeviceLogs_3_2017">
+    <Key>
+      <PropertyRef Name="DeviceLogId" />
+      <PropertyRef Name="DownloadDate" />
+      <PropertyRef Name="DeviceId" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="LogDate" />
+      <PropertyRef Name="Direction" />
+      <PropertyRef Name="AttDirection" />
+    </Key>
+    <Property Name="DeviceLogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AttenndanceMarkingType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DownloadDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DeviceId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LogDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Direction" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AttDirection" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AlternateAttDirection" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="StatusCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="WorkCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Duration" Type="Int32" />
+    <Property Name="Remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="SMSFlag" Type="Int32" />
+    <Property Name="VerificationMode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsApproved" Type="Int32" />
+    <Property Name="LogRecordLocation" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ManagerRemarks" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="AttMarkAndroidIMEINo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="DeviceLogs_3_2018">
+    <Key>
+      <PropertyRef Name="DeviceLogId" />
+      <PropertyRef Name="DownloadDate" />
+      <PropertyRef Name="DeviceId" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="LogDate" />
+      <PropertyRef Name="Direction" />
+      <PropertyRef Name="AttDirection" />
+    </Key>
+    <Property Name="DeviceLogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AttenndanceMarkingType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DownloadDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DeviceId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LogDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Direction" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AttDirection" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AlternateAttDirection" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="StatusCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="WorkCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Duration" Type="Int32" />
+    <Property Name="Remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="SMSFlag" Type="Int32" />
+    <Property Name="VerificationMode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsApproved" Type="Int32" />
+    <Property Name="LogRecordLocation" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ManagerRemarks" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="AttMarkAndroidIMEINo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="DeviceLogs_4_2017">
+    <Key>
+      <PropertyRef Name="DeviceLogId" />
+      <PropertyRef Name="DownloadDate" />
+      <PropertyRef Name="DeviceId" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="LogDate" />
+      <PropertyRef Name="Direction" />
+      <PropertyRef Name="AttDirection" />
+    </Key>
+    <Property Name="DeviceLogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AttenndanceMarkingType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DownloadDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DeviceId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LogDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Direction" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AttDirection" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AlternateAttDirection" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="StatusCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="WorkCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Duration" Type="Int32" />
+    <Property Name="Remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="SMSFlag" Type="Int32" />
+    <Property Name="VerificationMode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsApproved" Type="Int32" />
+    <Property Name="LogRecordLocation" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ManagerRemarks" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="AttMarkAndroidIMEINo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="DeviceLogs_4_2018">
+    <Key>
+      <PropertyRef Name="DeviceLogId" />
+      <PropertyRef Name="DownloadDate" />
+      <PropertyRef Name="DeviceId" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="LogDate" />
+      <PropertyRef Name="Direction" />
+      <PropertyRef Name="AttDirection" />
+    </Key>
+    <Property Name="DeviceLogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AttenndanceMarkingType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DownloadDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DeviceId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LogDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Direction" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AttDirection" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AlternateAttDirection" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="StatusCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="WorkCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Duration" Type="Int32" />
+    <Property Name="Remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="SMSFlag" Type="Int32" />
+    <Property Name="VerificationMode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsApproved" Type="Int32" />
+    <Property Name="LogRecordLocation" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ManagerRemarks" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="AttMarkAndroidIMEINo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="DeviceLogs_5_2017">
+    <Key>
+      <PropertyRef Name="DeviceLogId" />
+      <PropertyRef Name="DownloadDate" />
+      <PropertyRef Name="DeviceId" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="LogDate" />
+      <PropertyRef Name="Direction" />
+      <PropertyRef Name="AttDirection" />
+    </Key>
+    <Property Name="DeviceLogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AttenndanceMarkingType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DownloadDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DeviceId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LogDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Direction" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AttDirection" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AlternateAttDirection" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="StatusCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="WorkCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Duration" Type="Int32" />
+    <Property Name="Remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="SMSFlag" Type="Int32" />
+    <Property Name="VerificationMode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsApproved" Type="Int32" />
+    <Property Name="LogRecordLocation" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ManagerRemarks" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="AttMarkAndroidIMEINo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="DeviceLogs_5_2018">
+    <Key>
+      <PropertyRef Name="DeviceLogId" />
+      <PropertyRef Name="DownloadDate" />
+      <PropertyRef Name="DeviceId" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="LogDate" />
+      <PropertyRef Name="Direction" />
+      <PropertyRef Name="AttDirection" />
+    </Key>
+    <Property Name="DeviceLogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AttenndanceMarkingType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DownloadDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DeviceId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LogDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Direction" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AttDirection" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AlternateAttDirection" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="StatusCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="WorkCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Duration" Type="Int32" />
+    <Property Name="Remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="SMSFlag" Type="Int32" />
+    <Property Name="VerificationMode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsApproved" Type="Int32" />
+    <Property Name="LogRecordLocation" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ManagerRemarks" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="AttMarkAndroidIMEINo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="DeviceLogs_6_2017">
+    <Key>
+      <PropertyRef Name="DeviceLogId" />
+      <PropertyRef Name="DownloadDate" />
+      <PropertyRef Name="DeviceId" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="LogDate" />
+      <PropertyRef Name="Direction" />
+      <PropertyRef Name="AttDirection" />
+    </Key>
+    <Property Name="DeviceLogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AttenndanceMarkingType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DownloadDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DeviceId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LogDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Direction" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AttDirection" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AlternateAttDirection" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="StatusCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="WorkCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Duration" Type="Int32" />
+    <Property Name="Remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="SMSFlag" Type="Int32" />
+    <Property Name="VerificationMode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsApproved" Type="Int32" />
+    <Property Name="LogRecordLocation" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ManagerRemarks" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="AttMarkAndroidIMEINo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="DeviceLogs_6_2018">
+    <Key>
+      <PropertyRef Name="DeviceLogId" />
+      <PropertyRef Name="DownloadDate" />
+      <PropertyRef Name="DeviceId" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="LogDate" />
+      <PropertyRef Name="Direction" />
+      <PropertyRef Name="AttDirection" />
+    </Key>
+    <Property Name="DeviceLogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AttenndanceMarkingType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DownloadDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DeviceId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LogDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Direction" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AttDirection" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AlternateAttDirection" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="StatusCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="WorkCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Duration" Type="Int32" />
+    <Property Name="Remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="SMSFlag" Type="Int32" />
+    <Property Name="VerificationMode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsApproved" Type="Int32" />
+    <Property Name="LogRecordLocation" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ManagerRemarks" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="AttMarkAndroidIMEINo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="DeviceLogs_7_2016">
+    <Key>
+      <PropertyRef Name="DeviceLogId" />
+      <PropertyRef Name="DownloadDate" />
+      <PropertyRef Name="DeviceId" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="LogDate" />
+      <PropertyRef Name="Direction" />
+      <PropertyRef Name="AttDirection" />
+    </Key>
+    <Property Name="DeviceLogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DownloadDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DeviceId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LogDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Direction" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AttDirection" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AlternateAttDirection" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="StatusCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="WorkCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Duration" Type="Int32" />
+    <Property Name="Remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="SMSFlag" Type="Int32" />
+    <Property Name="VerificationMode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsApproved" Type="Int32" />
+    <Property Name="AttenndanceMarkingType" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="AttMarkAndroidIMEINo" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="ManagerRemarks" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="LogRecordLocation" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="DeviceLogs_7_2017">
+    <Key>
+      <PropertyRef Name="DeviceLogId" />
+      <PropertyRef Name="DownloadDate" />
+      <PropertyRef Name="DeviceId" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="LogDate" />
+      <PropertyRef Name="Direction" />
+      <PropertyRef Name="AttDirection" />
+    </Key>
+    <Property Name="DeviceLogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AttenndanceMarkingType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DownloadDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DeviceId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LogDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Direction" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AttDirection" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AlternateAttDirection" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="StatusCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="WorkCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Duration" Type="Int32" />
+    <Property Name="Remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="SMSFlag" Type="Int32" />
+    <Property Name="VerificationMode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsApproved" Type="Int32" />
+    <Property Name="LogRecordLocation" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ManagerRemarks" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="AttMarkAndroidIMEINo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="DeviceLogs_7_2018">
+    <Key>
+      <PropertyRef Name="DeviceLogId" />
+      <PropertyRef Name="DownloadDate" />
+      <PropertyRef Name="DeviceId" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="LogDate" />
+      <PropertyRef Name="Direction" />
+      <PropertyRef Name="AttDirection" />
+    </Key>
+    <Property Name="DeviceLogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AttenndanceMarkingType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DownloadDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DeviceId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LogDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Direction" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AttDirection" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AlternateAttDirection" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="StatusCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="WorkCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Duration" Type="Int32" />
+    <Property Name="Remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="SMSFlag" Type="Int32" />
+    <Property Name="VerificationMode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsApproved" Type="Int32" />
+    <Property Name="LogRecordLocation" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ManagerRemarks" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="AttMarkAndroidIMEINo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="DeviceLogs_8_2016">
+    <Key>
+      <PropertyRef Name="DeviceLogId" />
+      <PropertyRef Name="DownloadDate" />
+      <PropertyRef Name="DeviceId" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="LogDate" />
+      <PropertyRef Name="Direction" />
+      <PropertyRef Name="AttDirection" />
+    </Key>
+    <Property Name="DeviceLogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DownloadDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DeviceId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LogDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Direction" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AttDirection" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AlternateAttDirection" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="StatusCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="WorkCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Duration" Type="Int32" />
+    <Property Name="Remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="SMSFlag" Type="Int32" />
+    <Property Name="VerificationMode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsApproved" Type="Int32" />
+    <Property Name="AttenndanceMarkingType" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="AttMarkAndroidIMEINo" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="ManagerRemarks" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="LogRecordLocation" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="DeviceLogs_8_2017">
+    <Key>
+      <PropertyRef Name="DeviceLogId" />
+      <PropertyRef Name="DownloadDate" />
+      <PropertyRef Name="DeviceId" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="LogDate" />
+      <PropertyRef Name="Direction" />
+      <PropertyRef Name="AttDirection" />
+    </Key>
+    <Property Name="DeviceLogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AttenndanceMarkingType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DownloadDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DeviceId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LogDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Direction" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AttDirection" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AlternateAttDirection" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="StatusCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="WorkCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Duration" Type="Int32" />
+    <Property Name="Remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="SMSFlag" Type="Int32" />
+    <Property Name="VerificationMode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsApproved" Type="Int32" />
+    <Property Name="LogRecordLocation" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ManagerRemarks" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="AttMarkAndroidIMEINo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="DeviceLogs_8_2018">
+    <Key>
+      <PropertyRef Name="DeviceLogId" />
+      <PropertyRef Name="DownloadDate" />
+      <PropertyRef Name="DeviceId" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="LogDate" />
+      <PropertyRef Name="Direction" />
+      <PropertyRef Name="AttDirection" />
+    </Key>
+    <Property Name="DeviceLogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AttenndanceMarkingType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DownloadDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DeviceId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LogDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Direction" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AttDirection" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AlternateAttDirection" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="StatusCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="WorkCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Duration" Type="Int32" />
+    <Property Name="Remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="SMSFlag" Type="Int32" />
+    <Property Name="VerificationMode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsApproved" Type="Int32" />
+    <Property Name="LogRecordLocation" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ManagerRemarks" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="AttMarkAndroidIMEINo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="DeviceLogs_9_2016">
+    <Key>
+      <PropertyRef Name="DeviceLogId" />
+      <PropertyRef Name="DownloadDate" />
+      <PropertyRef Name="DeviceId" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="LogDate" />
+      <PropertyRef Name="Direction" />
+      <PropertyRef Name="AttDirection" />
+    </Key>
+    <Property Name="DeviceLogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DownloadDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DeviceId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LogDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Direction" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AttDirection" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AlternateAttDirection" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="StatusCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="WorkCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Duration" Type="Int32" />
+    <Property Name="Remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="SMSFlag" Type="Int32" />
+    <Property Name="VerificationMode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsApproved" Type="Int32" />
+    <Property Name="AttenndanceMarkingType" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="AttMarkAndroidIMEINo" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="ManagerRemarks" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="LogRecordLocation" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="DeviceLogs_9_2017">
+    <Key>
+      <PropertyRef Name="DeviceLogId" />
+      <PropertyRef Name="DownloadDate" />
+      <PropertyRef Name="DeviceId" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="LogDate" />
+      <PropertyRef Name="Direction" />
+      <PropertyRef Name="AttDirection" />
+    </Key>
+    <Property Name="DeviceLogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AttenndanceMarkingType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DownloadDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DeviceId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LogDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Direction" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AttDirection" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AlternateAttDirection" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="StatusCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="WorkCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Duration" Type="Int32" />
+    <Property Name="Remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="SMSFlag" Type="Int32" />
+    <Property Name="VerificationMode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsApproved" Type="Int32" />
+    <Property Name="LogRecordLocation" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ManagerRemarks" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="AttMarkAndroidIMEINo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="DeviceLogs_9_2018">
+    <Key>
+      <PropertyRef Name="DeviceLogId" />
+      <PropertyRef Name="DownloadDate" />
+      <PropertyRef Name="DeviceId" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="LogDate" />
+      <PropertyRef Name="Direction" />
+      <PropertyRef Name="AttDirection" />
+    </Key>
+    <Property Name="DeviceLogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AttenndanceMarkingType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DownloadDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DeviceId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LogDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Direction" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AttDirection" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AlternateAttDirection" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="StatusCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="WorkCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Duration" Type="Int32" />
+    <Property Name="Remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="SMSFlag" Type="Int32" />
+    <Property Name="VerificationMode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsApproved" Type="Int32" />
+    <Property Name="LogRecordLocation" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ManagerRemarks" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="AttMarkAndroidIMEINo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="DeviceSetting">
+    <Key>
+      <PropertyRef Name="IsAutoDownLoading" />
+      <PropertyRef Name="IsAutoClearLogs" />
+      <PropertyRef Name="IsDownLoadingFromBegining" />
+      <PropertyRef Name="DownloadInterval" />
+      <PropertyRef Name="CheckedDeviceIds" />
+    </Key>
+    <Property Name="IsAutoDownLoading" Type="Int32" Nullable="false" />
+    <Property Name="IsAutoClearLogs" Type="Int32" Nullable="false" />
+    <Property Name="IsDownLoadingFromBegining" Type="Int32" Nullable="false" />
+    <Property Name="DownloadInterval" Type="Int32" Nullable="false" />
+    <Property Name="CheckedDeviceIds" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IsParallelDatabaseDownload" Type="Int32" />
+  </EntityType>
+  <EntityType Name="EmpAutoLeaveAllotHistory">
+    <Key>
+      <PropertyRef Name="EmpAutoLeaveAllotHistoryId" />
+      <PropertyRef Name="EmployeeId" />
+      <PropertyRef Name="LeaveTypeId" />
+      <PropertyRef Name="AutoAllotedOn" />
+    </Key>
+    <Property Name="EmpAutoLeaveAllotHistoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeId" Type="Int32" Nullable="false" />
+    <Property Name="LeaveTypeId" Type="Int32" Nullable="false" />
+    <Property Name="AutoAllotedOn" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="EmployeeHistory">
+    <Key>
+      <PropertyRef Name="EmployeeHistoryId" />
+    </Key>
+    <Property Name="EmployeeHistoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeId" Type="Int32" />
+    <Property Name="EmployeeDetails" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="EmployeeLeaveCreditHistory">
+    <Key>
+      <PropertyRef Name="EmployeeLeaveCreditHistoryId" />
+      <PropertyRef Name="EmployeeId" />
+      <PropertyRef Name="LeaveTypeId" />
+      <PropertyRef Name="CreditedDate" />
+      <PropertyRef Name="CreditedCycle" />
+      <PropertyRef Name="Credited" />
+    </Key>
+    <Property Name="EmployeeLeaveCreditHistoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeId" Type="Int32" Nullable="false" />
+    <Property Name="LeaveTypeId" Type="Int32" Nullable="false" />
+    <Property Name="CreditedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreditedCycle" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Credited" Type="Double" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EmployeeLeaveEntry">
+    <Key>
+      <PropertyRef Name="EmployeeLeaveEntryId" />
+      <PropertyRef Name="LeaveTypeId" />
+      <PropertyRef Name="LeaveStatus" />
+      <PropertyRef Name="LeaveDuration" />
+      <PropertyRef Name="EmployeeId" />
+      <PropertyRef Name="LeaveDate" />
+      <PropertyRef Name="IsApproved" />
+      <PropertyRef Name="ApprovedBy" />
+      <PropertyRef Name="Remarks" />
+      <PropertyRef Name="LastModifiedBy" />
+    </Key>
+    <Property Name="EmployeeLeaveEntryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LeaveTypeId" Type="Int32" Nullable="false" />
+    <Property Name="LeaveStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LeaveDuration" Type="Int32" Nullable="false" />
+    <Property Name="EmployeeId" Type="Int32" Nullable="false" />
+    <Property Name="LeaveDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsApproved" Type="Int32" Nullable="false" />
+    <Property Name="ApprovedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Reason" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="ContactNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ToDate" Type="DateTime" Precision="3" />
+    <Property Name="LastModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ApplicableSession" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LeaveApplicationStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AppliedDate" Type="DateTime" Precision="3" />
+    <Property Name="ApprovedDeclinedDate" Type="DateTime" Precision="3" />
+    <Property Name="ManagerRemarks" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="IsAutoDeduct" Type="Int32" />
+  </EntityType>
+  <EntityType Name="EmployeesAudit">
+    <Key>
+      <PropertyRef Name="EmployeeId" />
+      <PropertyRef Name="EmployeeName" />
+      <PropertyRef Name="EmployeeCode" />
+      <PropertyRef Name="Gender" />
+      <PropertyRef Name="CompanyId" />
+      <PropertyRef Name="DepartmentId" />
+      <PropertyRef Name="CategoryId" />
+      <PropertyRef Name="EmployeeCodeInDevice" />
+      <PropertyRef Name="EmployementType" />
+      <PropertyRef Name="Status" />
+    </Key>
+    <Property Name="EmployeeId" Type="Int32" Nullable="false" />
+    <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EmployeeCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StringCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NumericCode" Type="Int32" />
+    <Property Name="Gender" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CompanyId" Type="Int32" Nullable="false" />
+    <Property Name="DepartmentId" Type="Int32" Nullable="false" />
+    <Property Name="Designation" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CategoryId" Type="Int32" Nullable="false" />
+    <Property Name="DOJ" Type="DateTime" Precision="3" />
+    <Property Name="DOR" Type="DateTime" Precision="3" />
+    <Property Name="DOC" Type="DateTime" Precision="3" />
+    <Property Name="EmployeeCodeInDevice" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EmployeeRFIDNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="EmployementType" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Status" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EmployeeDevicePassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EmployeeDeviceGroup" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FatherName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="MotherName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ResidentialAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PermanentAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ContactNo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DOB" Type="DateTime" Precision="3" />
+    <Property Name="PlaceOfBirth" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Nomenee1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Nomenee2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RecordStatus" Type="Int32" />
+    <Property Name="C1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="C2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="C3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="C4" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="C5" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="C6" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="C7" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Location" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="BLOODGROUP" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="WorkPlace" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ExtensionNo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="LoginName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="LoginPassword" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Grade" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Team" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="IsRecieveNotification" Type="Int32" />
+    <Property Name="HolidayGroup" Type="Int32" />
+    <Property Name="ShiftGroupId" Type="Int32" />
+    <Property Name="LastModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ShiftRotationMasterId" Type="Int32" />
+    <Property Name="ReportTo" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="ShiftType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OfficialPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OfficialMobile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PersonaleMailID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UIDNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PANNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="VoterIdNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MultiShiftGroupId" Type="Int32" />
+    <Property Name="LastUpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="EffectiveFrom" Type="DateTime" Precision="3" />
+    <Property Name="AndroidDeviceIMEINo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsMarkAndroidWebAttendance" Type="Int32" />
+    <Property Name="PushNotificationId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsSendApproveDeclineSMS" Type="Int32" />
+    <Property Name="IsSendPushNotification" Type="Int32" />
+    <Property Name="BankAccountNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ModeOfPayment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ESINo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ESIDispensary" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PFNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SalaryStructureId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="EmployeeShift">
+    <Key>
+      <PropertyRef Name="EmployeeShiftId" />
+      <PropertyRef Name="ShiftId" />
+      <PropertyRef Name="EmployeeId" />
+      <PropertyRef Name="Shiftdate" />
+      <PropertyRef Name="ShiftType" />
+      <PropertyRef Name="LastModifiedBy" />
+    </Key>
+    <Property Name="EmployeeShiftId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ShiftId" Type="Int32" Nullable="false" />
+    <Property Name="EmployeeId" Type="Int32" Nullable="false" />
+    <Property Name="Shiftdate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ShiftType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ToDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="EmployeeSpecialEntry">
+    <Key>
+      <PropertyRef Name="EmployeeSpecialEntryId" />
+      <PropertyRef Name="EmployeeId" />
+      <PropertyRef Name="Duration" />
+      <PropertyRef Name="SpecialEntryDate" />
+      <PropertyRef Name="BeginTime" />
+      <PropertyRef Name="EndTime" />
+      <PropertyRef Name="IsApproved" />
+      <PropertyRef Name="ApprovedBy" />
+      <PropertyRef Name="Remarks" />
+    </Key>
+    <Property Name="EmployeeSpecialEntryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeId" Type="Int32" Nullable="false" />
+    <Property Name="Duration" Type="Int32" Nullable="false" />
+    <Property Name="SpecialEntryDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="BeginTime" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EndTime" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BeginTime2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="EndTime2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="IsApproved" Type="Int32" Nullable="false" />
+    <Property Name="ApprovedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Remarks" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ToDate" Type="DateTime" Precision="3" />
+    <Property Name="LastModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ApplicableSession" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ODApplicationStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AppliedDate" Type="DateTime" Precision="3" />
+    <Property Name="ApprovedDeclinedDate" Type="DateTime" Precision="3" />
+    <Property Name="ManagerRemarks" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="OutDoorType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="HolidayGroup">
+    <Key>
+      <PropertyRef Name="HolidayGroupId" />
+    </Key>
+    <Property Name="HolidayGroupId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HolidayGroupCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="HolidayGroupName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="LeaveTypeHistory">
+    <Key>
+      <PropertyRef Name="LeaveTypeHistoryId" />
+    </Key>
+    <Property Name="LeaveTypeHistoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LeaveTypeId" Type="Int32" />
+    <Property Name="LeaveTypeDetails" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Location">
+    <Key>
+      <PropertyRef Name="LocationId" />
+    </Key>
+    <Property Name="LocationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LocationName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LocationCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="MailDetail">
+    <Key>
+      <PropertyRef Name="MaildetailsId" />
+    </Key>
+    <Property Name="MaildetailsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SMTPHost" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Port" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EnableSSL" Type="Int32" />
+    <Property Name="SMTPUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SMTPPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="MultiShiftAttendanceLog">
+    <Key>
+      <PropertyRef Name="MultiShiftAttendanceLogsId" />
+    </Key>
+    <Property Name="MultiShiftAttendanceLogsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AttendanceDate" Type="DateTime" Precision="3" />
+    <Property Name="EmployeeId" Type="Int32" />
+    <Property Name="MultiShiftId1" Type="Int32" />
+    <Property Name="MultiShiftId1InTime" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShiftId1InDeviceId" Type="Int32" />
+    <Property Name="MultiShiftId1OutTime" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShiftId1OutDeviceId" Type="Int32" />
+    <Property Name="MultiShiftId1Duration" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShiftId1LateBy" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShiftId1EarlyBy" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShiftId2" Type="Int32" />
+    <Property Name="MultiShiftId2InTime" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShiftId2InDeviceId" Type="Int32" />
+    <Property Name="MultiShiftId2OutTime" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShiftId2OutDeviceId" Type="Int32" />
+    <Property Name="MultiShiftId2Duration" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShiftId2LateBy" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShiftId2EarlyBy" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShiftId3" Type="Int32" />
+    <Property Name="MultiShiftId3InTime" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShiftId3InDeviceId" Type="Int32" />
+    <Property Name="MultiShiftId3OutTime" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShiftId3OutDeviceId" Type="Int32" />
+    <Property Name="MultiShiftId3Duration" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShiftId3LateBy" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShiftId3EarlyBy" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShiftId4" Type="Int32" />
+    <Property Name="MultiShiftId4InTime" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShiftId4InDeviceId" Type="Int32" />
+    <Property Name="MultiShiftId4OutTime" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShiftId4OutDeviceId" Type="Int32" />
+    <Property Name="MultiShiftId4Duration" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShiftId4LateBy" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShiftId4EarlyBy" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShiftId5" Type="Int32" />
+    <Property Name="MultiShiftId5InTime" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShiftId5InDeviceId" Type="Int32" />
+    <Property Name="MultiShiftId5OutTime" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShiftId5OutDeviceId" Type="Int32" />
+    <Property Name="MultiShiftId5Duration" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShiftId5LateBy" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShiftId5EarlyBy" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShiftId6" Type="Int32" />
+    <Property Name="MultiShiftId6InTime" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShiftId6InDeviceId" Type="Int32" />
+    <Property Name="MultiShiftId6OutTime" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShiftId6OutDeviceId" Type="Int32" />
+    <Property Name="MultiShiftId6Duration" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShiftId6LateBy" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShiftId6EarlyBy" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShiftId7" Type="Int32" />
+    <Property Name="MultiShiftId7InTime" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShiftId7InDeviceId" Type="Int32" />
+    <Property Name="MultiShiftId7OutTime" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShiftId7OutDeviceId" Type="Int32" />
+    <Property Name="MultiShiftId7Duration" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShiftId7LateBy" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShiftId7EarlyBy" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShiftId8" Type="Int32" />
+    <Property Name="MultiShiftId8InTime" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShiftId8InDeviceId" Type="Int32" />
+    <Property Name="MultiShiftId8OutTime" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShiftId8OutDeviceId" Type="Int32" />
+    <Property Name="MultiShiftId8Duration" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShiftId8LateBy" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShiftId8EarlyBy" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShiftId9" Type="Int32" />
+    <Property Name="MultiShiftId9InTime" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShiftId9InDeviceId" Type="Int32" />
+    <Property Name="MultiShiftId9OutTime" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShiftId9OutDeviceId" Type="Int32" />
+    <Property Name="MultiShiftId9Duration" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShiftId9LateBy" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShiftId9EarlyBy" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="IsOnLeave" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="LeaveTypeId" Type="Int32" />
+    <Property Name="LeaveType" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="LeaveDuration" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="LeaveStatus" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="LeaveRemarks" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="IsonSpecialOff" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="SpecialOffType" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="SpecialOffRemark" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="SpecialOffDuration" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="WeeklyOff" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Holiday" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="PunchRecords" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="PunchDirections" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="PunchDevicesName" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="Present" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Absent" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="OverTime" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="OverTimeE" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MissedOutPunch" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MissedInPunch" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Remarks" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="IsOnRestrictedHoliday" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="IsOnCompOff" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ReportPunchRecords" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="MultiShift1PunchRecords" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShift2PunchRecords" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShift3PunchRecords" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShift4PunchRecords" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShift5PunchRecords" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShift6PunchRecords" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShift7PunchRecords" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShift8PunchRecords" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShift9PunchRecords" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShift1Remarks" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShift1StatusCode" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShift1DetailedStatusCode" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShift1Status" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShift1DetailedStatus" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShift2Remarks" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShift2StatusCode" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShift2DetailedStatusCode" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShift2Status" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShift2DetailedStatus" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShift3Remarks" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShift3StatusCode" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShift3DetailedStatusCode" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShift3Status" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShift3DetailedStatus" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShift4Remarks" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShift4StatusCode" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShift4DetailedStatusCode" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShift4Status" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShift4DetailedStatus" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShift5Remarks" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShift5StatusCode" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShift5DetailedStatusCode" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShift5Status" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShift5DetailedStatus" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShift6Remarks" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShift6StatusCode" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShift6DetailedStatusCode" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShift6Status" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShift6DetailedStatus" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShift7Remarks" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShift7StatusCode" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShift7DetailedStatusCode" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShift7Status" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShift7DetailedStatus" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShift8Remarks" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShift8StatusCode" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShift8DetailedStatusCode" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShift8Status" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShift8DetailedStatus" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShift9Remarks" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShift9StatusCode" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShift9DetailedStatusCode" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShift9Status" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MultiShift9DetailedStatus" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="MultiShiftDepartmentShift">
+    <Key>
+      <PropertyRef Name="MultiShiftDepartmentShiftId" />
+    </Key>
+    <Property Name="MultiShiftDepartmentShiftId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MultiShiftId1" Type="Int32" />
+    <Property Name="MultiShiftId2" Type="Int32" />
+    <Property Name="MultiShiftId3" Type="Int32" />
+    <Property Name="MultiShiftId4" Type="Int32" />
+    <Property Name="MultiShiftId5" Type="Int32" />
+    <Property Name="MultiShiftId6" Type="Int32" />
+    <Property Name="MultiShiftId7" Type="Int32" />
+    <Property Name="MultiShiftId8" Type="Int32" />
+    <Property Name="MultiShiftId9" Type="Int32" />
+    <Property Name="DepartmentId" Type="Int32" />
+    <Property Name="Shiftdate" Type="DateTime" Precision="3" />
+    <Property Name="LastModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="MultiShiftEmployeeShift">
+    <Key>
+      <PropertyRef Name="MultiShiftEmployeeShiftId" />
+    </Key>
+    <Property Name="MultiShiftEmployeeShiftId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MultiShiftId1" Type="Int32" />
+    <Property Name="MultiShiftId2" Type="Int32" />
+    <Property Name="MultiShiftId3" Type="Int32" />
+    <Property Name="MultiShiftId4" Type="Int32" />
+    <Property Name="MultiShiftId5" Type="Int32" />
+    <Property Name="MultiShiftId6" Type="Int32" />
+    <Property Name="MultiShiftId7" Type="Int32" />
+    <Property Name="MultiShiftId8" Type="Int32" />
+    <Property Name="MultiShiftId9" Type="Int32" />
+    <Property Name="EmployeeId" Type="Int32" />
+    <Property Name="Shiftdate" Type="DateTime" Precision="3" />
+    <Property Name="LastModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ToDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="MultiShiftGroup">
+    <Key>
+      <PropertyRef Name="MultiShiftGroupId" />
+    </Key>
+    <Property Name="MultiShiftGroupId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MultiShiftGroupSName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="MultiShiftGroupFName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ShiftIds" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="MultiShift">
+    <Key>
+      <PropertyRef Name="MultiShiftId" />
+    </Key>
+    <Property Name="MultiShiftId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MultiShiftName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MultiShiftCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MultiShiftBeginTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MultiShiftEndTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MultiShiftDuration" Type="Int32" />
+    <Property Name="RecordStatus" Type="Int32" />
+    <Property Name="PunchBeginDuration" Type="Int32" />
+    <Property Name="PunchEndDuration" Type="Int32" />
+    <Property Name="IsGraceTimeApplicable" Type="Int32" />
+    <Property Name="GraceTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsPunchBeginDuration" Type="Int32" />
+    <Property Name="IsPunchEndDuration" Type="Int32" />
+    <Property Name="MultiShiftGroupId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ShiftGroup">
+    <Key>
+      <PropertyRef Name="ShiftGroupId" />
+    </Key>
+    <Property Name="ShiftGroupId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ShiftGroupCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="ShiftGroupName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ShiftIds" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="HR2PortalEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+    <EntitySet Name="Categories" EntityType="Self.Category" />
+    <EntitySet Name="Companies" EntityType="Self.Company" />
+    <EntitySet Name="Customers" EntityType="Self.Customer" />
+    <EntitySet Name="CustomizeReports" EntityType="Self.CustomizeReport" />
+    <EntitySet Name="CustomizeStatusCodes" EntityType="Self.CustomizeStatusCode" />
+    <EntitySet Name="Departments" EntityType="Self.Department" />
+    <EntitySet Name="DeviceCommands" EntityType="Self.DeviceCommand" />
+    <EntitySet Name="Devices" EntityType="Self.Device" />
+    <EntitySet Name="EmployeeCardIssuedDetails" EntityType="Self.EmployeeCardIssuedDetail" />
+    <EntitySet Name="EmployeeCompOffBrokers" EntityType="Self.EmployeeCompOffBroker" />
+    <EntitySet Name="EmployeeCompOffRequests" EntityType="Self.EmployeeCompOffRequest" />
+    <EntitySet Name="EmployeeDocuments" EntityType="Self.EmployeeDocument" />
+    <EntitySet Name="EmployeeFamilyMembers" EntityType="Self.EmployeeFamilyMember" />
+    <EntitySet Name="Employees" EntityType="Self.Employee" />
+    <EntitySet Name="EmployeesBios" EntityType="Self.EmployeesBio" />
+    <EntitySet Name="EmployeesLeavesBalances" EntityType="Self.EmployeesLeavesBalance" />
+    <EntitySet Name="EmployeesTimeSheets" EntityType="Self.EmployeesTimeSheet" />
+    <EntitySet Name="EmployeeTrainings" EntityType="Self.EmployeeTraining" />
+    <EntitySet Name="ExcelAttendanceLogs_Report" EntityType="Self.ExcelAttendanceLogs_Report" />
+    <EntitySet Name="ExcelDeviceLogs_Report" EntityType="Self.ExcelDeviceLogs_Report" />
+    <EntitySet Name="Holidays" EntityType="Self.Holiday" />
+    <EntitySet Name="JobTitles" EntityType="Self.JobTitle" />
+    <EntitySet Name="LeaveTypes" EntityType="Self.LeaveType" />
+    <EntitySet Name="MasterSettings" EntityType="Self.MasterSetting" />
+    <EntitySet Name="MessageLogs" EntityType="Self.MessageLog" />
+    <EntitySet Name="Permissions" EntityType="Self.Permission" />
+    <EntitySet Name="ProjectActivities" EntityType="Self.ProjectActivity" />
+    <EntitySet Name="Projects" EntityType="Self.Project" />
+    <EntitySet Name="ShiftRosters" EntityType="Self.ShiftRoster" />
+    <EntitySet Name="ShiftRosterShifts" EntityType="Self.ShiftRosterShift" />
+    <EntitySet Name="Shifts" EntityType="Self.Shift" />
+    <EntitySet Name="SystemUsers" EntityType="Self.SystemUser" />
+    <EntitySet Name="TimeSheetHours" EntityType="Self.TimeSheetHour" />
+    <EntitySet Name="Trainings" EntityType="Self.Training" />
+    <EntitySet Name="UserCompanies" EntityType="Self.UserCompany" />
+    <EntitySet Name="UserPermissions" EntityType="Self.UserPermission" />
+    <EntitySet Name="UsersFPs" EntityType="Self.UsersFP" />
+    <EntitySet Name="UserTokenCaches" EntityType="Self.UserTokenCach" />
+    <EntitySet Name="Vacancies" EntityType="Self.Vacancy" />
+    <EntitySet Name="AttendanceLogs" EntityType="Self.AttendanceLog" />
+    <EntitySet Name="Candidates" EntityType="Self.Candidate" />
+    <EntitySet Name="DepartmentShifts" EntityType="Self.DepartmentShift" />
+    <EntitySet Name="Designations" EntityType="Self.Designation" />
+    <EntitySet Name="DeviceLogs" EntityType="Self.DeviceLog" />
+    <EntitySet Name="DeviceLogs_1_2017" EntityType="Self.DeviceLogs_1_2017" />
+    <EntitySet Name="DeviceLogs_1_2018" EntityType="Self.DeviceLogs_1_2018" />
+    <EntitySet Name="DeviceLogs_10_2016" EntityType="Self.DeviceLogs_10_2016" />
+    <EntitySet Name="DeviceLogs_10_2017" EntityType="Self.DeviceLogs_10_2017" />
+    <EntitySet Name="DeviceLogs_11_2016" EntityType="Self.DeviceLogs_11_2016" />
+    <EntitySet Name="DeviceLogs_11_2017" EntityType="Self.DeviceLogs_11_2017" />
+    <EntitySet Name="DeviceLogs_12_2016" EntityType="Self.DeviceLogs_12_2016" />
+    <EntitySet Name="DeviceLogs_12_2017" EntityType="Self.DeviceLogs_12_2017" />
+    <EntitySet Name="DeviceLogs_2_2017" EntityType="Self.DeviceLogs_2_2017" />
+    <EntitySet Name="DeviceLogs_2_2018" EntityType="Self.DeviceLogs_2_2018" />
+    <EntitySet Name="DeviceLogs_3_2017" EntityType="Self.DeviceLogs_3_2017" />
+    <EntitySet Name="DeviceLogs_3_2018" EntityType="Self.DeviceLogs_3_2018" />
+    <EntitySet Name="DeviceLogs_4_2017" EntityType="Self.DeviceLogs_4_2017" />
+    <EntitySet Name="DeviceLogs_4_2018" EntityType="Self.DeviceLogs_4_2018" />
+    <EntitySet Name="DeviceLogs_5_2017" EntityType="Self.DeviceLogs_5_2017" />
+    <EntitySet Name="DeviceLogs_5_2018" EntityType="Self.DeviceLogs_5_2018" />
+    <EntitySet Name="DeviceLogs_6_2017" EntityType="Self.DeviceLogs_6_2017" />
+    <EntitySet Name="DeviceLogs_6_2018" EntityType="Self.DeviceLogs_6_2018" />
+    <EntitySet Name="DeviceLogs_7_2016" EntityType="Self.DeviceLogs_7_2016" />
+    <EntitySet Name="DeviceLogs_7_2017" EntityType="Self.DeviceLogs_7_2017" />
+    <EntitySet Name="DeviceLogs_7_2018" EntityType="Self.DeviceLogs_7_2018" />
+    <EntitySet Name="DeviceLogs_8_2016" EntityType="Self.DeviceLogs_8_2016" />
+    <EntitySet Name="DeviceLogs_8_2017" EntityType="Self.DeviceLogs_8_2017" />
+    <EntitySet Name="DeviceLogs_8_2018" EntityType="Self.DeviceLogs_8_2018" />
+    <EntitySet Name="DeviceLogs_9_2016" EntityType="Self.DeviceLogs_9_2016" />
+    <EntitySet Name="DeviceLogs_9_2017" EntityType="Self.DeviceLogs_9_2017" />
+    <EntitySet Name="DeviceLogs_9_2018" EntityType="Self.DeviceLogs_9_2018" />
+    <EntitySet Name="DeviceSettings" EntityType="Self.DeviceSetting" />
+    <EntitySet Name="EmpAutoLeaveAllotHistories" EntityType="Self.EmpAutoLeaveAllotHistory" />
+    <EntitySet Name="EmployeeHistories" EntityType="Self.EmployeeHistory" />
+    <EntitySet Name="EmployeeLeaveCreditHistories" EntityType="Self.EmployeeLeaveCreditHistory" />
+    <EntitySet Name="EmployeeLeaveEntries" EntityType="Self.EmployeeLeaveEntry" />
+    <EntitySet Name="EmployeesAudits" EntityType="Self.EmployeesAudit" />
+    <EntitySet Name="EmployeeShifts" EntityType="Self.EmployeeShift" />
+    <EntitySet Name="EmployeeSpecialEntries" EntityType="Self.EmployeeSpecialEntry" />
+    <EntitySet Name="HolidayGroups" EntityType="Self.HolidayGroup" />
+    <EntitySet Name="LeaveTypeHistories" EntityType="Self.LeaveTypeHistory" />
+    <EntitySet Name="Locations" EntityType="Self.Location" />
+    <EntitySet Name="MailDetails" EntityType="Self.MailDetail" />
+    <EntitySet Name="MultiShiftAttendanceLogs" EntityType="Self.MultiShiftAttendanceLog" />
+    <EntitySet Name="MultiShiftDepartmentShifts" EntityType="Self.MultiShiftDepartmentShift" />
+    <EntitySet Name="MultiShiftEmployeeShifts" EntityType="Self.MultiShiftEmployeeShift" />
+    <EntitySet Name="MultiShiftGroups" EntityType="Self.MultiShiftGroup" />
+    <EntitySet Name="MultiShifts" EntityType="Self.MultiShift" />
+    <EntitySet Name="ShiftGroups" EntityType="Self.ShiftGroup" />
+    <FunctionImport Name="GetExtraHours" IsComposable="true" ReturnType="Collection(HR2Model.GetExtraHours_Result)">
+      <Parameter Name="InTime" Mode="In" Type="DateTime" />
+      <Parameter Name="OutTime" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="Get_IN_OUT" ReturnType="Collection(HR2Model.Get_IN_OUT_Result)">
+      <Parameter Name="EmployeeId" Mode="In" Type="Int32" />
+      <Parameter Name="Month" Mode="In" Type="Int32" />
+      <Parameter Name="year" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Get_IN_OUT_TIME">
+      <Parameter Name="EmployeeId" Mode="In" Type="Int32" />
+      <Parameter Name="Month" Mode="In" Type="Int32" />
+      <Parameter Name="year" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Get_Month" ReturnType="Collection(HR2Model.Get_Month_Result)" />
+    <FunctionImport Name="GetAttendance" ReturnType="Collection(HR2Model.GetAttendance_Result)">
+      <Parameter Name="UserID" Mode="In" Type="String" />
+      <Parameter Name="Month" Mode="In" Type="Int32" />
+      <Parameter Name="Year" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="Get_IN_OUT_Result">
+    <Property Type="Int32" Name="UserId" Nullable="true" />
+    <Property Type="DateTime" Name="InDateTime" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="OutDateTime" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="Date" Nullable="true" />
+    <Property Type="String" Name="EmployeeName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="EmployeeCode" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Gender" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="DateDifference" Nullable="true" MaxLength="92" />
+  </ComplexType>
+  <ComplexType Name="Get_Month_Result">
+    <Property Type="String" Name="Month_Name" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="MONTH_NUMBER" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetAttendance_Result">
+    <Property Type="String" Name="EmployeeName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="255" />
+    <Property Type="DateTime" Name="date" Nullable="true" />
+    <Property Type="Int32" Name="month" Nullable="true" />
+    <Property Type="Int32" Name="year" Nullable="true" />
+    <Property Type="String" Name="in_time" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="out_time" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="workhours" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="extratime" Nullable="true" MaxLength="34" />
+  </ComplexType>
+</Schema>
