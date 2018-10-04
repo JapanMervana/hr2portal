@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @*<title>@ViewBag.Title - My ASP.NET Application</title>*@
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126175043-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-126175043-1');
+    </script>
+
+</head>
+<body>
+
+
+    @if (!Request.IsAuthenticated)
+    {
+        <div class="navbar navbar inverse navbar-fixed-topcol-md-12 text-center">
+            <div class="container1">
+                <div class="navbar-header1">
+                    @*<img src="~/Image/techblocksLogo.png" class="pull-right" />*@
+                    <img src="~/Image/login_back.jpg" alt="anImage" usemap="#examplemap" width="100%" height="100%" />
+                    <map name="examplemap">
+                        <area shape="rect" coords="340,123,629,446" href="/Account/SignIn" alt="SignIn">
+                        @*<area shape="circle" coords="115,50,10" href="page2.html" alt="Page2">*@
+                    </map>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @*@Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
+                    <img src="~/Image/techblocksLogo.png" class="pull-left" />
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Attendance Report", "Index", "Attendance")</li>
+                        <li>@Html.ActionLink("My Profile", "Index", "UserProfile")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+    }
+    <div class="container body-content">
+        @RenderBody()
+
+        <footer>
+            <p class="text-center white">&copy; Techblocks Inhouse Product</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
